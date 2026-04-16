@@ -1,94 +1,94 @@
 ---
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
-const pageTitle = 'پرشین‌سازه | فروش هدفمند به پروژه‌های ساختمانی در حال ساخت';
+const pageTitle = 'PersianSaze | Targeted sales to active construction projects';
 const pageDescription =
-  'پرشین‌سازه در بازار محصولات و خدمات ساختمانی، مسیر رسیدن به پروژه درست در زمان درست را کوتاه‌تر می‌کند.';
+  'PersianSaze helps construction suppliers reach the right project at the right time with clearer market execution.';
 
 const constructionStages = [
-  'تخریب و گودبرداری',
-  'فونداسیون',
-  'اسکلت‌بندی',
-  'دیوارچینی',
-  'گچ و خاک',
-  'ابتدای نازک‌کاری',
-  'نازک‌کاری',
-  'ظریف‌کاری',
-  'پایان کار',
+  'Demolition and excavation',
+  'Foundation',
+  'Structural framing',
+  'Masonry',
+  'Plaster base layer',
+  'Early finishing',
+  'Finishing',
+  'Detail finishing',
+  'Project completion',
 ];
 
 const pricingPlans = [
   {
-    name: 'بنیان',
-    audience: 'مناسب برای کسب‌وکارهای کوچک و متوسط',
-    coverage: 'زمین تا ۳۰۰ متر، شامل ۳ مرحله‌ی ساخت',
-    price3Month: '۷,۵۰۰,۰۰۰ تومان',
-    price6Month: '۱۰,۲۰۰,۰۰۰ تومان',
-    price12Month: '۱۳,۵۰۰,۰۰۰ تومان',
-    extraStagePrice: '۲,۵۰۰,۰۰۰ تومان',
+    name: 'Bonyan',
+    audience: 'Best for small and mid-sized businesses',
+    coverage: 'Plots up to 300 m², includes 3 construction stages',
+    price3Month: '7,500,000 toman',
+    price6Month: '10,200,000 toman',
+    price12Month: '13,500,000 toman',
+    extraStagePrice: '2,500,000 toman',
   },
   {
-    name: 'رویان',
-    audience: 'مناسب برای کسب‌وکارهای کوچک و متوسط',
-    coverage: 'زمین تا ۵۰۰ متر، شامل ۳ مرحله‌ی ساخت',
-    price3Month: '۹,۹۰۰,۰۰۰ تومان',
-    price6Month: '۱۳,۵۰۰,۰۰۰ تومان',
-    price12Month: '۱۸,۰۰۰,۰۰۰ تومان',
-    extraStagePrice: '۳,۳۰۰,۰۰۰ تومان',
+    name: 'Royan',
+    audience: 'Best for small and mid-sized businesses',
+    coverage: 'Plots up to 500 m², includes 3 construction stages',
+    price3Month: '9,900,000 toman',
+    price6Month: '13,500,000 toman',
+    price12Month: '18,000,000 toman',
+    extraStagePrice: '3,300,000 toman',
   },
   {
-    name: 'تابان',
-    audience: 'مناسب برای کسب‌وکارهای متوسط و بزرگ',
-    coverage: 'زمین تا ۷۰۰ متر، شامل ۳ مرحله‌ی ساخت',
-    price3Month: '۱۲,۳۰۰,۰۰۰ تومان',
-    price6Month: '۱۵,۵۰۰,۰۰۰ تومان',
-    price12Month: '۲۱,۰۰۰,۰۰۰ تومان',
-    extraStagePrice: '۴,۱۰۰,۰۰۰ تومان',
+    name: 'Taban',
+    audience: 'Best for mid-sized and larger businesses',
+    coverage: 'Plots up to 700 m², includes 3 construction stages',
+    price3Month: '12,300,000 toman',
+    price6Month: '15,500,000 toman',
+    price12Month: '21,000,000 toman',
+    extraStagePrice: '4,100,000 toman',
   },
   {
-    name: 'تابان پلاس',
-    audience: 'مناسب برای کسب‌وکارهای متوسط و بزرگ',
-    coverage: 'بدون محدودیت متراژ، شامل ۳ مرحله‌ی ساخت',
-    price3Month: '۱۵,۰۰۰,۰۰۰ تومان',
-    price6Month: '۱۸,۰۰۰,۰۰۰ تومان',
-    price12Month: '۲۴,۰۰۰,۰۰۰ تومان',
-    extraStagePrice: '۵,۰۰۰,۰۰۰ تومان',
+    name: 'Taban Plus',
+    audience: 'Best for mid-sized and larger businesses',
+    coverage: 'No area limit, includes 3 construction stages',
+    price3Month: '15,000,000 toman',
+    price6Month: '18,000,000 toman',
+    price12Month: '24,000,000 toman',
+    extraStagePrice: '5,000,000 toman',
   },
 ];
 
 const faqItems = [
   {
-    question: 'پرشین‌سازه دقیقاً چه اطلاعاتی از پروژه‌ها ارائه می‌دهد؟',
+    question: 'What project information does PersianSaze provide exactly?',
     answer:
-      'آدرس و موقعیت پروژه، مرحله ساخت، تصاویر واقعی، اطلاعات تماس فرد مرتبط با پروژه، و مشخصات عمومی سازه مثل متراژ، تعداد طبقات و تعداد واحدها.',
+      'Project address and location, current construction stage, real photos, contact details of the related person, and general building specs such as area, floor count, and unit count.',
   },
   {
-    question: 'اطلاعات پروژه‌ها از کجا جمع‌آوری می‌شود؟',
+    question: 'How is project information collected?',
     answer:
-      'اطلاعات از طریق بازدید میدانی و حضوری جمع‌آوری می‌شود. پروژه‌ها شناسایی، ثبت و تصویربرداری می‌شوند و بعد به‌صورت دوره‌ای دوباره بررسی و به‌روزرسانی می‌شوند.',
+      'Data is collected through field visits. Projects are identified, recorded, and photographed, then reviewed again on a recurring cycle for updates.',
   },
   {
-    question: 'هر چند وقت اطلاعات به‌روزرسانی می‌شود؟',
+    question: 'How often is the information updated?',
     answer:
-      'پروژه‌ها به‌صورت دوره‌ای بازبینی و به‌روزرسانی می‌شوند. وضعیت ساخت، تصاویر و اطلاعات تماس در هر دوره بررسی می‌شود و در صورت تغییر، اصلاح می‌گردد.',
+      'Projects are reviewed and updated on a recurring cycle. Construction status, photos, and contact details are checked each cycle and corrected when changes are found.',
   },
   {
-    question: 'پرشین‌سازه چه مناطقی را پوشش می‌دهد؟',
-    answer: 'در حال حاضر پوشش اصلی پرشین‌سازه تهران، کرج و لواسان است.',
+    question: 'Which areas does PersianSaze cover?',
+    answer: 'Current primary coverage is Tehran, Karaj, and Lavasan.',
   },
   {
-    question: 'پرشین‌سازه فقط یک لیست پروژه یا بانک شماره است؟',
+    question: 'Is PersianSaze only a project list or contact database?',
     answer:
-      'خیر. پرشین‌سازه فقط نمایش پروژه یا شماره تماس نیست. این سامانه در کنار داده‌های زنده پروژه، ابزارهای اجرایی مثل CRM و پیامک هوشمند و آموزش استفاده از آن‌ها را هم در اختیار شما می‌گذارد.',
+      'No. PersianSaze is not just project display or phone numbers. Alongside live project data, it includes execution tools such as CRM and smart SMS, plus training on how to use them effectively.',
   },
   {
-    question: 'آیا می‌توانم قبل از خرید دمو ببینم؟',
+    question: 'Can I see a demo before purchasing?',
     answer:
-      'بله. با درخواست دمو، کارشناس پرشین‌سازه محیط سامانه، نحوه استفاده و امکانات آن را به شما نشان می‌دهد.',
+      'Yes. When you request a demo, a PersianSaze specialist shows you the platform environment, usage flow, and key capabilities.',
   },
   {
-    question: 'فرق طرح‌های اشتراکی چیست؟',
-    answer: 'طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.',
+    question: 'What is the difference between subscription plans?',
+    answer: 'Plans are defined by subscription type, selected construction stages, and subscription duration.',
   },
 ];
 
@@ -106,16 +106,16 @@ const faqSchema = {
 };
 ---
 
-<DefaultLayout title={pageTitle} description={pageDescription} lang="fa" dir="rtl" showNavbar={false} showFooter={false}>
-  <div dir="rtl" class="bg-[#FAFAF7] text-[#1F1E1D]">
+<DefaultLayout title={pageTitle} description={pageDescription} lang="en" dir="ltr" showNavbar={false} showFooter={false}>
+  <div class="bg-[#FAFAF7] text-[#1F1E1D]">
     <header class="sticky top-0 z-30 border-b border-[#E8E4DD] bg-[#FAFAF7]/95 backdrop-blur-sm">
       <div class="container flex items-center justify-between py-4">
-        <a href="/" class="text-base font-bold">پرشین‌سازه</a>
+        <a href="/" class="text-base font-bold">PersianSaze</a>
         <a
           href="/contact"
           class="rounded-full bg-[#1F1E1D] px-4 py-2 text-sm font-medium text-[#F0EBE2]"
         >
-          مشاهده دمو
+          Request Demo
         </a>
       </div>
     </header>
@@ -123,182 +123,181 @@ const faqSchema = {
     <main>
       <section id="hero" class="container py-14 text-center sm:py-20">
         <p class="mx-auto inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">
-          پوشش اصلی: تهران، کرج و لواسان
+          Primary coverage: Tehran, Karaj, and Lavasan
         </p>
         <h1 class="mx-auto mt-6 max-w-4xl text-4xl leading-[1.25] font-bold sm:text-5xl sm:leading-[1.2]">
-          پروژه‌های ساختمانی در حال ساخت<br />
-          در تهران، کرج و لواسان
+          Active construction projects<br />
+          across Tehran, Karaj, and Lavasan
         </h1>
-        <p class="mx-auto mt-8 max-w-2xl text-right text-base leading-8 sm:text-center sm:text-lg sm:leading-9">
-          در بازار محصولات و خدمات ساختمانی، فروش موفق از رسیدن به پروژه درست در زمان درست شروع
-          می‌شود.
+        <p class="mx-auto mt-8 max-w-2xl text-base leading-8 sm:text-lg sm:leading-9">
+          In the construction products and services market, successful sales begin with reaching the
+          right project at the right time.
           <br />
-          پرشین‌سازه این مسیر را کوتاه‌تر می‌کند.
+          PersianSaze helps shorten that path.
         </p>
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a href="/contact" class="rounded-full bg-[#D97757] px-5 py-2.5 text-sm font-medium text-white">
-            مشاهده دمو
+            Request Demo
           </a>
           <a
             href="#solution"
             class="rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-5 py-2.5 text-sm font-medium"
           >
-            امکانات سامانه
+            Platform Capabilities
           </a>
         </div>
       </section>
 
       <section id="problem" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
         <h2 class="max-w-3xl text-3xl leading-tight font-bold sm:text-4xl">
-          فروش در بازار ساختمان،<br />
-          فقط به داشتن محصول خوب بستگی ندارد
+          In construction sales,<br />
+          having a good product is not enough
         </h2>
         <p class="mt-6 max-w-3xl text-base leading-8 sm:text-lg sm:leading-9">
-          پروژه‌ها پراکنده‌اند، اطلاعات بازار همیشه دقیق و به‌روز نیست،
+          Projects are scattered, market data is not always accurate and current,
           <br />
-          و اگر تماس زود یا دیر انجام شود، فرصت فروش از بین می‌رود.
+          and when contact happens too early or too late, sales opportunities disappear.
           <br />
-          برای همین پیدا کردن پروژه مناسب، هنوز برای خیلی از تأمین‌کنندگان
+          That is why finding the right project is still time-consuming,
           <br />
-          یک کار زمان‌بر، پرهزینه و فرسایشی است.
+          costly, and draining for many suppliers.
         </p>
       </section>
 
       <section id="solution" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
         <h2 class="max-w-4xl text-3xl leading-tight font-bold sm:text-4xl">
-          پرشین‌سازه پیدا کردن پروژه مناسب را ساده‌تر می‌کند
+          PersianSaze makes it easier to find the right projects
         </h2>
         <p class="mt-6 max-w-4xl text-base leading-8 sm:text-lg sm:leading-9">
-          پرشین‌سازه با داده‌های زنده پروژه‌های در حال ساخت، ابزارهای اجرایی مثل CRM و پیامک هوشمند،
-          و آموزش استفاده درست از این ابزارها، به شما کمک می‌کند فرصت‌های مناسب را زودتر ببینید و
-          مسیر فروش را هدفمندتر پیش ببرید.
+          With live data from active construction projects, execution tools such as CRM and smart SMS,
+          and practical training for proper usage, PersianSaze helps you spot relevant opportunities
+          sooner and move your sales process forward with more focus.
         </p>
 
         <div class="mt-8 grid gap-4 lg:grid-cols-3">
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-6">
-            <h3 class="text-xl font-bold">اطلاعات به‌روز پروژه‌ها</h3>
+            <h3 class="text-xl font-bold">Up-to-date project information</h3>
             <p class="mt-4 text-sm leading-7">
-              آدرس پروژه، مرحله ساخت، تصاویر واقعی و اطلاعات تماس، در یک مسیر مشخص جمع‌آوری و
-              به‌روزرسانی می‌شود تا بتوانید دقیق‌تر پروژه مناسب را پیدا کنید.
+              Project address, construction stage, real photos, and contact details are collected and
+              refreshed through a clear process so your team can identify better-fit projects faster.
             </p>
             <a
               href="#"
               class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#FAFAF7] px-3 py-1.5 text-xs font-medium"
             >
-              مشاهده جزئیات
+              View Details
             </a>
           </article>
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <h3 class="text-xl font-bold">ابزارهای اجرایی فروش</h3>
+            <h3 class="text-xl font-bold">Sales execution tools</h3>
             <p class="mt-4 text-sm leading-7">
-              با ابزارهایی مثل نقشه، فیلترها، CRM و پیامک هوشمند، پیدا کردن، پیگیری و جلو بردن
-              فرصت‌های فروش ساده‌تر و منظم‌تر می‌شود.
+              With tools such as map search, filters, CRM, and smart SMS, finding, tracking, and
+              advancing sales opportunities becomes more structured and easier to run.
             </p>
             <a
               href="#"
               class="mt-5 inline-flex rounded-full bg-[#1F1E1D] px-3 py-1.5 text-xs font-medium text-[#F0EBE2]"
             >
-              مشاهده جزئیات
+              View Details
             </a>
           </article>
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-6">
-            <h3 class="text-xl font-bold">آموزش برای استفاده بهتر</h3>
+            <h3 class="text-xl font-bold">Training for better usage</h3>
             <p class="mt-4 text-sm leading-7">
-              تیم شما فقط به اطلاعات دسترسی ندارد؛ یاد می‌گیرد چگونه بهتر جست‌وجو کند، درست‌تر
-              پیگیری کند و هدفمندتر جلو برود.
+              Your team gets more than access to data. They learn how to search better, follow up more
+              effectively, and move with clearer intent.
             </p>
             <a
               href="#"
               class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#FAFAF7] px-3 py-1.5 text-xs font-medium"
             >
-              مشاهده جزئیات
+              View Details
             </a>
           </article>
         </div>
       </section>
 
       <section id="how-it-works" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
-        <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">چطور کار می‌کند</p>
+        <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">How it works</p>
         <p class="mt-5 max-w-4xl text-base leading-8 sm:text-lg sm:leading-9">
-          پرشین‌سازه فقط نمایش پروژه نیست؛ از جمع‌آوری و به‌روزرسانی اطلاعات تا شناسایی فرصت،
-          ارتباط و پیگیری، یک مسیر روشن برای فروش می‌سازد.
+          PersianSaze is not just project display. From data collection and refreshing to opportunity
+          identification, outreach, and follow-up, it builds a clear operating path for sales.
         </p>
 
         <div class="mt-8 grid gap-4 lg:grid-cols-2">
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <h3 class="text-lg font-bold">لایه جمع‌آوری و به‌روزرسانی اطلاعات</h3>
+            <h3 class="text-lg font-bold">Data collection and update layer</h3>
             <p class="mt-3 text-sm leading-7">
-              اطلاعات پروژه‌های در حال ساخت به‌صورت میدانی جمع‌آوری می‌شود و به‌طور مستمر
-              به‌روزرسانی می‌ماند تا شما به یک تصویر زنده‌تر و قابل‌اعتمادتر از بازار دسترسی داشته
-              باشید.
+              Active construction project data is gathered through field operations and continuously
+              refreshed so your team can work with a more live and trustworthy market view.
             </p>
             <a
               href="#"
               class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-3 py-1.5 text-xs font-medium"
             >
-              بیشتر بدانید
+              Learn More
             </a>
           </article>
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <h3 class="text-lg font-bold">لایه هوش مصنوعی</h3>
+            <h3 class="text-lg font-bold">AI layer</h3>
             <p class="mt-3 text-sm leading-7">
-              هوش مصنوعی پرشین‌سازه به شما کمک می‌کند پروژه‌ها را بهتر ارزیابی کنید، فرصت‌های
-              مناسب‌تر را سریع‌تر ببینید و تصمیم دقیق‌تری برای اقدام بگیرید.
+              PersianSaze AI helps you evaluate projects with more confidence, spot better-fit
+              opportunities faster, and make clearer decisions about when to act.
             </p>
             <a
               href="#"
               class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-3 py-1.5 text-xs font-medium"
             >
-              بیشتر بدانید
+              Learn More
             </a>
           </article>
         </div>
       </section>
 
       <section id="usage-steps" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
-        <h2 class="text-3xl font-bold sm:text-4xl">مراحل استفاده</h2>
+        <h2 class="text-3xl font-bold sm:text-4xl">Usage steps</h2>
         <ol class="mt-8 grid gap-4 md:grid-cols-2">
           <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۱</p>
-            <h3 class="mt-3 text-lg font-bold">پروژه مناسب را پیدا کنید</h3>
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">Step 1</p>
+            <h3 class="mt-3 text-lg font-bold">Find the right project</h3>
             <p class="mt-3 text-sm leading-7">
-              با فیلترها، نقشه و اطلاعات به‌روز پروژه‌ها، می‌توانید فرصت‌های مرتبط با حوزه کاری خود
-              را سریع‌تر پیدا کنید.
+              With filters, map view, and updated project data, you can find opportunities aligned with
+              your sales focus more quickly.
             </p>
           </li>
           <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۲</p>
-            <h3 class="mt-3 text-lg font-bold">پروژه را بررسی کنید</h3>
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">Step 2</p>
+            <h3 class="mt-3 text-lg font-bold">Review each project</h3>
             <p class="mt-3 text-sm leading-7">
-              با دیدن مرحله ساخت، تصاویر واقعی و اطلاعات پروژه، راحت‌تر تشخیص می‌دهید کدام فرصت
-              برای تماس و مذاکره مناسب‌تر است.
+              By checking construction stage, real photos, and project details, your team can judge
+              which opportunities are more ready for contact and discussion.
             </p>
           </li>
           <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۳</p>
-            <h3 class="mt-3 text-lg font-bold">ارتباط را شروع کنید</h3>
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">Step 3</p>
+            <h3 class="mt-3 text-lg font-bold">Start outreach</h3>
             <p class="mt-3 text-sm leading-7">
-              بعد از انتخاب پروژه مناسب، می‌توانید با اطلاعات تماس موجود و ابزارهای ارتباطی، ارتباط
-              را در زمان مناسب شروع کنید.
+              Once a suitable project is selected, you can initiate outreach at the right time using
+              available contact information and communication tools.
             </p>
           </li>
           <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۴</p>
-            <h3 class="mt-3 text-lg font-bold">پیگیری را جلو ببرید</h3>
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">Step 4</p>
+            <h3 class="mt-3 text-lg font-bold">Move follow-up forward</h3>
             <p class="mt-3 text-sm leading-7">
-              با CRM و ابزارهای اجرایی، پیگیری‌ها ثبت می‌شود و مسیر فروش از حالت پراکنده به یک روند
-              منظم‌تر تبدیل می‌شود.
+              With CRM and execution tools, follow-ups stay recorded and your pipeline moves from
+              scattered activity to a more consistent rhythm.
             </p>
           </li>
         </ol>
         <div class="mt-6 rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-6">
-          <p class="inline-flex rounded-full bg-[#1F1E1D] px-3 py-1 text-xs font-medium text-[#F0EBE2]">نتیجه</p>
-          <p class="mt-3 text-lg font-bold">فروش بیشتر و هدفمندتر</p>
+          <p class="inline-flex rounded-full bg-[#1F1E1D] px-3 py-1 text-xs font-medium text-[#F0EBE2]">Outcome</p>
+          <p class="mt-3 text-lg font-bold">More focused, more effective sales</p>
         </div>
       </section>
 
       <section id="construction-stages" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
-        <h2 class="text-3xl font-bold sm:text-4xl">مراحل ساخت قابل پوشش</h2>
+        <h2 class="text-3xl font-bold sm:text-4xl">Construction stages covered</h2>
         <ul class="mt-6 flex flex-wrap gap-2.5">
           {
             constructionStages.map((stage) => (
@@ -309,42 +308,42 @@ const faqSchema = {
       </section>
 
       <section id="who-uses" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
-        <h2 class="text-3xl font-bold sm:text-4xl">چه کسانی از پرشین‌سازه استفاده می‌کنند</h2>
+        <h2 class="text-3xl font-bold sm:text-4xl">Who uses PersianSaze</h2>
         <p class="mt-6 max-w-3xl text-base leading-8 sm:text-lg sm:leading-9">
-          اگر محصول یا خدمتی دارید که به پروژه‌های ساختمانی در حال ساخت فروخته می‌شود،
+          If your product or service is sold into active construction projects,
           <br />
-          پرشین‌سازه می‌تواند برای شما کاربردی باشد.
+          PersianSaze can be a practical fit for your sales team.
         </p>
         <div class="mt-8 grid gap-4 md:grid-cols-2">
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <h3 class="text-lg leading-8 font-bold">وقتی سرعت رسیدن مهم‌تر است</h3>
+            <h3 class="text-lg leading-8 font-bold">When speed to project matters most</h3>
             <p class="mt-3 text-sm leading-7">
-              برای کالاها و خدماتی که فاصله بین نیاز، خرید و اجرا در آن‌ها کوتاه است،
+              For products and services with a short gap between need, purchase, and execution,
               <br />
-              مهم‌ترین مزیت این است که زودتر به پروژه آماده خرید برسید.
+              the core advantage is reaching ready-to-buy projects sooner.
             </p>
             <div class="my-4 h-px w-full bg-[#E8E4DD]"></div>
-            <p class="text-sm font-medium">محصولاتی مثل:</p>
-            <p class="mt-2 text-sm leading-7">سیمان، آجر، گچ، میلگرد، شن و ماسه، مصالح پایه</p>
+            <p class="text-sm font-medium">Examples:</p>
+            <p class="mt-2 text-sm leading-7">Cement, brick, plaster, rebar, sand and gravel, base materials</p>
           </article>
           <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
-            <h3 class="text-lg leading-8 font-bold">وقتی زودتر وارد مذاکره شدن مهم‌تر است</h3>
+            <h3 class="text-lg leading-8 font-bold">When entering negotiation earlier matters more</h3>
             <p class="mt-3 text-sm leading-7">
-              برای کالاها و خدماتی که تصمیم خریدشان زمان می‌برد،
+              For products and services with longer purchase decisions,
               <br />
-              مهم‌ترین مزیت این است که زودتر وارد فضای تصمیم‌سازی پروژه شوید.
+              the core advantage is entering the project's decision window earlier.
             </p>
             <div class="my-4 h-px w-full bg-[#E8E4DD]"></div>
-            <p class="text-sm font-medium">محصولاتی مثل:</p>
-            <p class="mt-2 text-sm leading-7">آسانسور، تأسیسات، نما، درب و پنجره، کابینت، خدمات مهندسی</p>
+            <p class="text-sm font-medium">Examples:</p>
+            <p class="mt-2 text-sm leading-7">Elevators, MEP systems, façade, doors and windows, cabinets, engineering services</p>
           </article>
         </div>
       </section>
 
       <section id="pricing" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
-        <h2 class="text-3xl font-bold sm:text-4xl">تعرفه‌ها / اشتراک‌ها</h2>
+        <h2 class="text-3xl font-bold sm:text-4xl">Plans and pricing</h2>
         <p class="mt-5 max-w-3xl text-base leading-8">
-          طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.
+          Plans are defined by subscription type, selected construction stages, and subscription duration.
         </p>
 
         <div class="mt-8 grid gap-4 lg:grid-cols-2">
@@ -354,26 +353,26 @@ const faqSchema = {
               <ul class="mt-4 space-y-2.5 text-sm leading-7">
                 <li>{plan.audience}</li>
                 <li>{plan.coverage}</li>
-                <li><span class="font-bold">۳ ماهه:</span> {plan.price3Month}</li>
-                <li><span class="font-bold">۶ ماهه:</span> {plan.price6Month}</li>
-                <li><span class="font-bold">۱۲ ماهه:</span> {plan.price12Month}</li>
-                <li><span class="font-bold">هر مرحله‌ی اضافه:</span> {plan.extraStagePrice}</li>
+                <li><span class="font-bold">3 months:</span> {plan.price3Month}</li>
+                <li><span class="font-bold">6 months:</span> {plan.price6Month}</li>
+                <li><span class="font-bold">12 months:</span> {plan.price12Month}</li>
+                <li><span class="font-bold">Each extra stage:</span> {plan.extraStagePrice}</li>
               </ul>
             </article>
           ))}
         </div>
 
         <p class="mt-6 rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-5 text-sm leading-7">
-          تمامی اشتراک‌ها شامل : دسترسی در لحظه، CRM، پنل پیامک و کارگاه‌های آموزشی
+          All subscriptions include: real-time access, CRM, SMS panel, and training workshops.
         </p>
         <a href="/contact" class="mt-6 inline-flex rounded-full bg-[#1F1E1D] px-5 py-2.5 text-sm font-medium text-[#F0EBE2]">
-          مشاوره انتخاب پلن
+          Get Plan Guidance
         </a>
       </section>
 
       <section id="faq" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
-        <h2 class="text-3xl font-bold sm:text-4xl">سؤالات پرتکرار</h2>
-        <p class="mt-4 text-base leading-8">پاسخ کوتاه به سؤال‌هایی که بیشتر از ما می‌پرسند.</p>
+        <h2 class="text-3xl font-bold sm:text-4xl">Frequently asked questions</h2>
+        <p class="mt-4 text-base leading-8">Short answers to the questions we hear most often.</p>
 
         <div class="mt-8 space-y-3">
           {faqItems.map((item, index) => (
@@ -387,20 +386,20 @@ const faqSchema = {
 
       <section id="final-cta" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
         <h2 class="max-w-4xl text-3xl leading-tight font-bold sm:text-4xl">
-          اگر می‌خواهید زودتر به پروژه‌های مناسب برسید،
+          If you want to reach better-fit projects sooner,
           <br />
-          دموی پرشین‌سازه را ببینید
+          request a PersianSaze demo
         </h2>
         <p class="mt-6 max-w-3xl text-base leading-8 sm:text-lg sm:leading-9">
-          در یک دموی کوتاه، می‌توانید محیط سامانه، امکانات آن و نمونه پروژه‌های مرتبط با حوزه کاری
-          خود را ببینید.
+          In a short demo, you can review the platform environment, key capabilities, and sample
+          projects relevant to your sales domain.
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a href="/contact" class="rounded-full bg-[#D97757] px-5 py-2.5 text-sm font-medium text-white">
-            مشاهده دمو
+            Request Demo
           </a>
           <a href="#solution" class="rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-5 py-2.5 text-sm font-medium">
-            امکانات سامانه
+            Platform Capabilities
           </a>
         </div>
       </section>
@@ -410,19 +409,19 @@ const faqSchema = {
       <div class="container">
         <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p class="text-lg font-bold">پرشین‌سازه</p>
-            <p class="mt-2 text-sm leading-7">سیستم فروش هدفمند به پروژه‌های ساختمانی در حال ساخت</p>
+            <p class="text-lg font-bold">PersianSaze</p>
+            <p class="mt-2 text-sm leading-7">A structured sales system for active construction projects</p>
           </div>
           <nav>
             <ul class="flex flex-wrap justify-start gap-x-5 gap-y-2 text-sm sm:justify-end">
-              <li><a href="#how-it-works">چگونه کار می‌کند</a></li>
-              <li><a href="#pricing">تعرفه‌ها</a></li>
-              <li><a href="#faq">سؤالات پرتکرار</a></li>
-              <li><a href="/contact">تماس / درخواست دمو</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#pricing">Plans</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/contact">Contact / Request Demo</a></li>
             </ul>
           </nav>
         </div>
-        <p class="mt-8 border-t border-[#E8E4DD] pt-5 text-xs">© {new Date().getFullYear()} پرشین‌سازه. تمامی حقوق محفوظ است.</p>
+        <p class="mt-8 border-t border-[#E8E4DD] pt-5 text-xs">© {new Date().getFullYear()} PersianSaze. All rights reserved.</p>
       </div>
     </footer>
   </div>
