@@ -18,10 +18,42 @@ const constructionStages = [
 ];
 
 const pricingPlans = [
-  { name: 'بنیان', coverage: 'مناسب شروع فروش هدفمند' },
-  { name: 'رویان', coverage: 'گسترش پوشش بازار و پیگیری منظم‌تر' },
-  { name: 'تابان', coverage: 'پوشش عملیاتی گسترده‌تر برای تیم فروش' },
-  { name: 'تابان پلاس', coverage: 'بالاترین سطح پوشش برای تیم‌های فعال‌تر' },
+  {
+    name: 'بنیان',
+    audience: 'مناسب برای کسب‌وکارهای کوچک و متوسط',
+    coverage: 'زمین تا ۳۰۰ متر، شامل ۳ مرحله‌ی ساخت',
+    price3Month: '۷,۵۰۰,۰۰۰ تومان',
+    price6Month: '۱۰,۲۰۰,۰۰۰ تومان',
+    price12Month: '۱۳,۵۰۰,۰۰۰ تومان',
+    extraStagePrice: '۲,۵۰۰,۰۰۰ تومان',
+  },
+  {
+    name: 'رویان',
+    audience: 'مناسب برای کسب‌وکارهای کوچک و متوسط',
+    coverage: 'زمین تا ۵۰۰ متر، شامل ۳ مرحله‌ی ساخت',
+    price3Month: '۹,۹۰۰,۰۰۰ تومان',
+    price6Month: '۱۳,۵۰۰,۰۰۰ تومان',
+    price12Month: '۱۸,۰۰۰,۰۰۰ تومان',
+    extraStagePrice: '۳,۳۰۰,۰۰۰ تومان',
+  },
+  {
+    name: 'تابان',
+    audience: 'مناسب برای کسب‌وکارهای متوسط و بزرگ',
+    coverage: 'زمین تا ۷۰۰ متر، شامل ۳ مرحله‌ی ساخت',
+    price3Month: '۱۲,۳۰۰,۰۰۰ تومان',
+    price6Month: '۱۵,۵۰۰,۰۰۰ تومان',
+    price12Month: '۲۱,۰۰۰,۰۰۰ تومان',
+    extraStagePrice: '۴,۱۰۰,۰۰۰ تومان',
+  },
+  {
+    name: 'تابان پلاس',
+    audience: 'مناسب برای کسب‌وکارهای متوسط و بزرگ',
+    coverage: 'بدون محدودیت متراژ، شامل ۳ مرحله‌ی ساخت',
+    price3Month: '۱۵,۰۰۰,۰۰۰ تومان',
+    price6Month: '۱۸,۰۰۰,۰۰۰ تومان',
+    price12Month: '۲۴,۰۰۰,۰۰۰ تومان',
+    extraStagePrice: '۵,۰۰۰,۰۰۰ تومان',
+  },
 ];
 
 const faqSchema = {
@@ -207,21 +239,20 @@ const faqSchema = {
         {pricingPlans.map((plan) => (
           <article class="rounded-xl border p-5">
             <h3 class="font-semibold">{plan.name}</h3>
-            <p class="text-muted-foreground mt-2 text-sm">{plan.coverage}</p>
-            <ul class="text-muted-foreground mt-4 space-y-1 text-xs leading-6">
-              <li>پوشش: متناسب با پلن انتخابی</li>
-              <li>مراحل قابل انتخاب: متناسب با پلن انتخابی</li>
-              <li>قیمت ۳ ماهه: در دمو ارائه می‌شود</li>
-              <li>قیمت ۶ ماهه: در دمو ارائه می‌شود</li>
-              <li>قیمت ۱۲ ماهه: در دمو ارائه می‌شود</li>
-              <li>قیمت هر مرحله اضافه: در دمو ارائه می‌شود</li>
+            <ul class="text-muted-foreground mt-3 space-y-2 text-xs leading-6 sm:text-sm">
+              <li>{plan.audience}</li>
+              <li>{plan.coverage}</li>
+              <li><span class="font-medium">۳ ماهه:</span> {plan.price3Month}</li>
+              <li><span class="font-medium">۶ ماهه:</span> {plan.price6Month}</li>
+              <li><span class="font-medium">۱۲ ماهه:</span> {plan.price12Month}</li>
+              <li><span class="font-medium">هر مرحله‌ی اضافه:</span> {plan.extraStagePrice}</li>
             </ul>
           </article>
         ))}
       </div>
 
       <p class="mt-6 rounded-lg border p-4 text-sm leading-7">
-        تمامی اشتراک‌ها شامل : دسترسی در لحظه، CRM، پنل پیامک و کارگاه‌های آموزشی
+        تمامی اشتراک‌ها شامل: دسترسی در لحظه، CRM، پنل پیامک و کارگاه‌های آموزشی
       </p>
       <a href="/contact" class="bg-foreground text-background mt-6 inline-block rounded-lg px-5 py-2.5 text-sm font-medium">مشاوره انتخاب پلن</a>
     </section>
