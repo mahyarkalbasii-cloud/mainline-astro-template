@@ -56,235 +56,375 @@ const pricingPlans = [
   },
 ];
 
+const faqItems = [
+  {
+    question: 'پرشین‌سازه دقیقاً چه اطلاعاتی از پروژه‌ها ارائه می‌دهد؟',
+    answer:
+      'آدرس و موقعیت پروژه، مرحله ساخت، تصاویر واقعی، اطلاعات تماس فرد مرتبط با پروژه، و مشخصات عمومی سازه مثل متراژ، تعداد طبقات و تعداد واحدها.',
+  },
+  {
+    question: 'اطلاعات پروژه‌ها از کجا جمع‌آوری می‌شود؟',
+    answer:
+      'اطلاعات از طریق بازدید میدانی و حضوری جمع‌آوری می‌شود. پروژه‌ها شناسایی، ثبت و تصویربرداری می‌شوند و بعد به‌صورت دوره‌ای دوباره بررسی و به‌روزرسانی می‌شوند.',
+  },
+  {
+    question: 'هر چند وقت اطلاعات به‌روزرسانی می‌شود؟',
+    answer:
+      'پروژه‌ها به‌صورت دوره‌ای بازبینی و به‌روزرسانی می‌شوند. وضعیت ساخت، تصاویر و اطلاعات تماس در هر دوره بررسی می‌شود و در صورت تغییر، اصلاح می‌گردد.',
+  },
+  {
+    question: 'پرشین‌سازه چه مناطقی را پوشش می‌دهد؟',
+    answer: 'در حال حاضر پوشش اصلی پرشین‌سازه تهران، کرج و لواسان است.',
+  },
+  {
+    question: 'پرشین‌سازه فقط یک لیست پروژه یا بانک شماره است؟',
+    answer:
+      'خیر. پرشین‌سازه فقط نمایش پروژه یا شماره تماس نیست. این سامانه در کنار داده‌های زنده پروژه، ابزارهای اجرایی مثل CRM و پیامک هوشمند و آموزش استفاده از آن‌ها را هم در اختیار شما می‌گذارد.',
+  },
+  {
+    question: 'آیا می‌توانم قبل از خرید دمو ببینم؟',
+    answer:
+      'بله. با درخواست دمو، کارشناس پرشین‌سازه محیط سامانه، نحوه استفاده و امکانات آن را به شما نشان می‌دهد.',
+  },
+  {
+    question: 'فرق طرح‌های اشتراکی چیست؟',
+    answer: 'طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.',
+  },
+];
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'پرشین‌سازه دقیقاً چه اطلاعاتی از پروژه‌ها ارائه می‌دهد؟',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'آدرس و موقعیت پروژه، مرحله ساخت، تصاویر واقعی، اطلاعات تماس فرد مرتبط با پروژه، و مشخصات عمومی سازه مثل متراژ، تعداد طبقات و تعداد واحدها.',
-      },
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
     },
-    {
-      '@type': 'Question',
-      name: 'اطلاعات پروژه‌ها از کجا جمع‌آوری می‌شود؟',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'اطلاعات از طریق بازدید میدانی و حضوری جمع‌آوری می‌شود. پروژه‌ها شناسایی، ثبت و تصویربرداری می‌شوند و بعد به‌صورت دوره‌ای دوباره بررسی و به‌روزرسانی می‌شوند.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'پرشین‌سازه چه مناطقی را پوشش می‌دهد؟',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'در حال حاضر پوشش اصلی پرشین‌سازه تهران، کرج و لواسان است.',
-      },
-    },
-  ],
+  })),
 };
 ---
 
-<DefaultLayout title={pageTitle} description={pageDescription} lang="fa" dir="rtl">
-  <div dir="rtl" class="bg-[#f7f6f2] pt-32 lg:pt-40">
-    <section class="container py-16 text-right md:py-24" id="hero">
-      <h1 class="mt-4 max-w-4xl text-4xl leading-[1.35] font-semibold md:text-5xl md:leading-[1.3]">
-        پروژه‌های ساختمانی در حال ساخت<br />
-        در تهران، کرج و لواسان
-      </h1>
-      <p class="text-muted-foreground mt-6 max-w-3xl text-base leading-8 md:text-lg md:leading-9">
-        در بازار محصولات و خدمات ساختمانی، فروش موفق از رسیدن به پروژه درست در زمان درست شروع
-        می‌شود.
-        <br />
-        پرشین‌سازه این مسیر را کوتاه‌تر می‌کند.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-start gap-3 sm:gap-4">
-        <a href="/contact" class="inline-flex items-center rounded-lg border border-[#4c5a2a] bg-[#4c5a2a] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#3f4b24]">مشاهده دمو</a>
-        <a href="#solution" class="inline-flex items-center rounded-lg border border-[#4c5a2a]/35 bg-transparent px-5 py-2.5 text-sm font-medium text-[#3f4b24] transition-colors hover:bg-[#4c5a2a]/5">امکانات سامانه</a>
+<DefaultLayout title={pageTitle} description={pageDescription} lang="fa" dir="rtl" showNavbar={false} showFooter={false}>
+  <div dir="rtl" class="bg-[#FAFAF7] text-[#1F1E1D]">
+    <header class="sticky top-0 z-30 border-b border-[#E8E4DD] bg-[#FAFAF7]/95 backdrop-blur-sm">
+      <div class="container flex items-center justify-between py-4">
+        <a href="/" class="text-base font-bold">پرشین‌سازه</a>
+        <a
+          href="/contact"
+          class="rounded-full bg-[#1F1E1D] px-4 py-2 text-sm font-medium text-[#F0EBE2]"
+        >
+          مشاهده دمو
+        </a>
       </div>
-    </section>
+    </header>
 
-    <section class="container border-t border-[#e2ded2] py-14 text-right md:py-20" id="problem">
-      <h2 class="max-w-4xl text-3xl leading-tight font-semibold md:text-4xl">
-        فروش در بازار ساختمان،<br />
-        فقط به داشتن محصول خوب بستگی ندارد
-      </h2>
-      <p class="text-muted-foreground mt-6 max-w-3xl text-base leading-8 md:text-lg md:leading-9">
-        پروژه‌ها پراکنده‌اند، اطلاعات بازار همیشه دقیق و به‌روز نیست،
-        <br />
-        و اگر تماس زود یا دیر انجام شود، فرصت فروش از بین می‌رود.
-        <br />
-        برای همین پیدا کردن پروژه مناسب، هنوز برای خیلی از تأمین‌کنندگان
-        <br />
-        یک کار زمان‌بر، پرهزینه و فرسایشی است.
-      </p>
-    </section>
+    <main>
+      <section id="hero" class="container py-14 text-center sm:py-20">
+        <p class="mx-auto inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">
+          پوشش اصلی: تهران، کرج و لواسان
+        </p>
+        <h1 class="mx-auto mt-6 max-w-4xl text-4xl leading-[1.25] font-bold sm:text-5xl sm:leading-[1.2]">
+          پروژه‌های ساختمانی در حال ساخت<br />
+          در تهران، کرج و لواسان
+        </h1>
+        <p class="mx-auto mt-8 max-w-2xl text-right text-base leading-8 sm:text-center sm:text-lg sm:leading-9">
+          در بازار محصولات و خدمات ساختمانی، فروش موفق از رسیدن به پروژه درست در زمان درست شروع
+          می‌شود.
+          <br />
+          پرشین‌سازه این مسیر را کوتاه‌تر می‌کند.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="/contact" class="rounded-full bg-[#D97757] px-5 py-2.5 text-sm font-medium text-white">
+            مشاهده دمو
+          </a>
+          <a
+            href="#solution"
+            class="rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-5 py-2.5 text-sm font-medium"
+          >
+            امکانات سامانه
+          </a>
+        </div>
+      </section>
 
-    <section class="container border-t border-[#e2ded2] py-14 text-right md:py-20" id="solution">
-      <h2 class="max-w-4xl text-3xl leading-tight font-semibold md:text-4xl">پرشین‌سازه پیدا کردن پروژه مناسب را ساده‌تر می‌کند</h2>
-      <p class="text-muted-foreground mt-6 max-w-4xl text-base leading-8 md:text-lg md:leading-9">
-        پرشین‌سازه با داده‌های زنده پروژه‌های در حال ساخت، ابزارهای اجرایی مثل CRM و پیامک
-        هوشمند، و آموزش استفاده درست از این ابزارها، به شما کمک می‌کند فرصت‌های مناسب را زودتر
-        ببینید و مسیر فروش را هدفمندتر پیش ببرید.
-      </p>
+      <section id="problem" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="max-w-3xl text-3xl leading-tight font-bold sm:text-4xl">
+          فروش در بازار ساختمان،<br />
+          فقط به داشتن محصول خوب بستگی ندارد
+        </h2>
+        <p class="mt-6 max-w-3xl text-base leading-8 sm:text-lg sm:leading-9">
+          پروژه‌ها پراکنده‌اند، اطلاعات بازار همیشه دقیق و به‌روز نیست،
+          <br />
+          و اگر تماس زود یا دیر انجام شود، فرصت فروش از بین می‌رود.
+          <br />
+          برای همین پیدا کردن پروژه مناسب، هنوز برای خیلی از تأمین‌کنندگان
+          <br />
+          یک کار زمان‌بر، پرهزینه و فرسایشی است.
+        </p>
+      </section>
 
-      <div class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-          <span class="text-muted-foreground text-xs font-medium">ستون ۱</span>
-          <h3 class="mt-2 text-lg font-semibold">اطلاعات به‌روز پروژه‌ها</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">آدرس پروژه، مرحله ساخت، تصاویر واقعی و اطلاعات تماس، در یک مسیر مشخص جمع‌آوری و به‌روزرسانی می‌شود تا بتوانید دقیق‌تر پروژه مناسب را پیدا کنید.</p>
-          <a href="#" class="mt-5 inline-flex rounded-lg border border-[#4c5a2a]/35 px-3 py-1.5 text-sm font-medium text-[#3f4b24]">مشاهده جزئیات</a>
-        </article>
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-          <span class="text-muted-foreground text-xs font-medium">ستون ۲</span>
-          <h3 class="mt-2 text-lg font-semibold">ابزارهای اجرایی فروش</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">با ابزارهایی مثل نقشه، فیلترها، CRM و پیامک هوشمند، پیدا کردن، پیگیری و جلو بردن فرصت‌های فروش ساده‌تر و منظم‌تر می‌شود.</p>
-          <a href="#" class="mt-5 inline-flex rounded-lg border border-[#4c5a2a]/35 px-3 py-1.5 text-sm font-medium text-[#3f4b24]">مشاهده جزئیات</a>
-        </article>
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:col-span-2 sm:p-6 lg:col-span-1">
-          <span class="text-muted-foreground text-xs font-medium">ستون ۳</span>
-          <h3 class="mt-2 text-lg font-semibold">آموزش برای استفاده بهتر</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">تیم شما فقط به اطلاعات دسترسی ندارد؛ یاد می‌گیرد چگونه بهتر جست‌وجو کند، درست‌تر پیگیری کند و هدفمندتر جلو برود.</p>
-          <a href="#" class="mt-5 inline-flex rounded-lg border border-[#4c5a2a]/35 px-3 py-1.5 text-sm font-medium text-[#3f4b24]">مشاهده جزئیات</a>
-        </article>
-      </div>
-    </section>
+      <section id="solution" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="max-w-4xl text-3xl leading-tight font-bold sm:text-4xl">
+          پرشین‌سازه پیدا کردن پروژه مناسب را ساده‌تر می‌کند
+        </h2>
+        <p class="mt-6 max-w-4xl text-base leading-8 sm:text-lg sm:leading-9">
+          پرشین‌سازه با داده‌های زنده پروژه‌های در حال ساخت، ابزارهای اجرایی مثل CRM و پیامک هوشمند،
+          و آموزش استفاده درست از این ابزارها، به شما کمک می‌کند فرصت‌های مناسب را زودتر ببینید و
+          مسیر فروش را هدفمندتر پیش ببرید.
+        </p>
 
-    <section class="container border-t border-[#e2ded2] py-14 text-right md:py-20" id="how-it-works">
-      <h2 class="text-3xl font-semibold md:text-4xl">چطور کار می‌کند</h2>
-      <p class="text-muted-foreground mt-6 max-w-4xl text-base leading-8 md:text-lg md:leading-9">پرشین‌سازه فقط نمایش پروژه نیست؛ از جمع‌آوری و به‌روزرسانی اطلاعات تا شناسایی فرصت، ارتباط و پیگیری، یک مسیر روشن برای فروش می‌سازد.</p>
-      <div class="mt-9 grid gap-4 md:gap-6 lg:grid-cols-2">
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-          <span class="text-muted-foreground text-xs font-medium">لایه ۱</span>
-          <h3 class="mt-2 font-semibold">لایه جمع‌آوری و به‌روزرسانی اطلاعات</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">اطلاعات پروژه‌های در حال ساخت به‌صورت میدانی جمع‌آوری می‌شود و به‌طور مستمر به‌روزرسانی می‌ماند تا شما به یک تصویر زنده‌تر و قابل‌اعتمادتر از بازار دسترسی داشته باشید.</p>
-          <a href="#" class="mt-5 inline-flex rounded-lg border border-[#4c5a2a]/35 px-3 py-1.5 text-sm font-medium text-[#3f4b24]">بیشتر بدانید</a>
-        </article>
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-          <span class="text-muted-foreground text-xs font-medium">لایه ۲</span>
-          <h3 class="mt-2 font-semibold">لایه هوش مصنوعی</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">هوش مصنوعی پرشین‌سازه به شما کمک می‌کند پروژه‌ها را بهتر ارزیابی کنید، فرصت‌های مناسب‌تر را سریع‌تر ببینید و تصمیم دقیق‌تری برای اقدام بگیرید.</p>
-          <a href="#" class="mt-5 inline-flex rounded-lg border border-[#4c5a2a]/35 px-3 py-1.5 text-sm font-medium text-[#3f4b24]">بیشتر بدانید</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="container border-t border-[#e2ded2] py-14 text-right md:py-20" id="usage-steps">
-      <h2 class="text-3xl font-semibold md:text-4xl">مراحل استفاده</h2>
-      <ol class="mt-8 grid gap-4 md:grid-cols-2 md:gap-6">
-        <li class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۱</span><h3 class="mt-2 font-semibold">۱) پروژه مناسب را پیدا کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با فیلترها، نقشه و اطلاعات به‌روز پروژه‌ها، می‌توانید فرصت‌های مرتبط با حوزه کاری خود را سریع‌تر پیدا کنید.</p></li>
-        <li class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۲</span><h3 class="mt-2 font-semibold">۲) پروژه را بررسی کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با دیدن مرحله ساخت، تصاویر واقعی و اطلاعات پروژه، راحت‌تر تشخیص می‌دهید کدام فرصت برای تماس و مذاکره مناسب‌تر است.</p></li>
-        <li class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۳</span><h3 class="mt-2 font-semibold">۳) ارتباط را شروع کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">بعد از انتخاب پروژه مناسب، می‌توانید با اطلاعات تماس موجود و ابزارهای ارتباطی، ارتباط را در زمان مناسب شروع کنید.</p></li>
-        <li class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۴</span><h3 class="mt-2 font-semibold">۴) پیگیری را جلو ببرید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با CRM و ابزارهای اجرایی، پیگیری‌ها ثبت می‌شود و مسیر فروش از حالت پراکنده به یک روند منظم‌تر تبدیل می‌شود.</p></li>
-      </ol>
-      <div class="mt-8 rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-        <p class="text-sm font-medium">نتیجه</p>
-        <p class="text-muted-foreground mt-2 text-base">فروش بیشتر و هدفمندتر</p>
-      </div>
-    </section>
-
-    <section class="container border-t border-[#e2ded2] py-12 text-right md:py-16" id="construction-stages">
-      <h2 class="text-3xl font-semibold md:text-4xl">مراحل ساخت قابل پوشش</h2>
-      <ul class="mt-6 flex flex-wrap gap-3.5">
-        {constructionStages.map((stage) => <li class="rounded-full border border-[#ddd8cb] bg-white px-4 py-2 text-sm">{stage}</li>)}
-      </ul>
-    </section>
-
-    <section class="container border-t border-[#e2ded2] py-14 text-right md:py-20" id="who-uses">
-      <h2 class="text-3xl font-semibold md:text-4xl">چه کسانی از پرشین‌سازه استفاده می‌کنند</h2>
-      <p class="text-muted-foreground mt-6 max-w-3xl text-base leading-8 md:text-lg md:leading-9">اگر محصول یا خدمتی دارید که به پروژه‌های ساختمانی در حال ساخت فروخته می‌شود،<br />پرشین‌سازه می‌تواند برای شما کاربردی باشد.</p>
-      <div class="mt-9 grid gap-4 md:grid-cols-2 md:gap-6">
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-          <span class="text-muted-foreground text-xs font-medium">بخش ۱</span>
-          <h3 class="mt-2 text-lg font-semibold">وقتی سرعت رسیدن مهم‌تر است</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">برای کالاها و خدماتی که فاصله بین نیاز، خرید و اجرا در آن‌ها کوتاه است،<br />مهم‌ترین مزیت این است که زودتر به پروژه آماده خرید برسید.</p>
-          <div class="my-4 h-px w-full bg-border"></div>
-          <p class="text-sm font-medium">محصولاتی مثل:</p>
-          <p class="text-muted-foreground mt-1 text-sm">سیمان، آجر، گچ، میلگرد، شن و ماسه، مصالح پایه</p>
-        </article>
-        <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none sm:p-6">
-          <span class="text-muted-foreground text-xs font-medium">بخش ۲</span>
-          <h3 class="mt-2 text-lg font-semibold">وقتی زودتر وارد مذاکره شدن مهم‌تر است</h3>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">برای کالاها و خدماتی که تصمیم خریدشان زمان می‌برد،<br />مهم‌ترین مزیت این است که زودتر وارد فضای تصمیم‌سازی پروژه شوید.</p>
-          <div class="my-4 h-px w-full bg-border"></div>
-          <p class="text-sm font-medium">محصولاتی مثل:</p>
-          <p class="text-muted-foreground mt-1 text-sm">آسانسور، تأسیسات، نما، درب و پنجره، کابینت، خدمات مهندسی</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="container border-t border-[#e2ded2] py-12 text-right" id="pricing">
-      <h2 class="text-3xl font-semibold md:text-4xl">تعرفه‌ها / اشتراک‌ها</h2>
-      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.</p>
-
-      <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6">
-        {pricingPlans.map((plan) => (
-          <article class="rounded-xl border border-[#e2ded2] bg-white p-5 shadow-none">
-            <h3 class="font-semibold">{plan.name}</h3>
-            <ul class="text-muted-foreground mt-3 space-y-2 text-xs leading-6 sm:text-sm">
-              <li>{plan.audience}</li>
-              <li>{plan.coverage}</li>
-              <li><span class="font-medium">۳ ماهه:</span> {plan.price3Month}</li>
-              <li><span class="font-medium">۶ ماهه:</span> {plan.price6Month}</li>
-              <li><span class="font-medium">۱۲ ماهه:</span> {plan.price12Month}</li>
-              <li><span class="font-medium">هر مرحله‌ی اضافه:</span> {plan.extraStagePrice}</li>
-            </ul>
+        <div class="mt-8 grid gap-4 lg:grid-cols-3">
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-6">
+            <h3 class="text-xl font-bold">اطلاعات به‌روز پروژه‌ها</h3>
+            <p class="mt-4 text-sm leading-7">
+              آدرس پروژه، مرحله ساخت، تصاویر واقعی و اطلاعات تماس، در یک مسیر مشخص جمع‌آوری و
+              به‌روزرسانی می‌شود تا بتوانید دقیق‌تر پروژه مناسب را پیدا کنید.
+            </p>
+            <a
+              href="#"
+              class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#FAFAF7] px-3 py-1.5 text-xs font-medium"
+            >
+              مشاهده جزئیات
+            </a>
           </article>
-        ))}
-      </div>
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <h3 class="text-xl font-bold">ابزارهای اجرایی فروش</h3>
+            <p class="mt-4 text-sm leading-7">
+              با ابزارهایی مثل نقشه، فیلترها، CRM و پیامک هوشمند، پیدا کردن، پیگیری و جلو بردن
+              فرصت‌های فروش ساده‌تر و منظم‌تر می‌شود.
+            </p>
+            <a
+              href="#"
+              class="mt-5 inline-flex rounded-full bg-[#1F1E1D] px-3 py-1.5 text-xs font-medium text-[#F0EBE2]"
+            >
+              مشاهده جزئیات
+            </a>
+          </article>
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-6">
+            <h3 class="text-xl font-bold">آموزش برای استفاده بهتر</h3>
+            <p class="mt-4 text-sm leading-7">
+              تیم شما فقط به اطلاعات دسترسی ندارد؛ یاد می‌گیرد چگونه بهتر جست‌وجو کند، درست‌تر
+              پیگیری کند و هدفمندتر جلو برود.
+            </p>
+            <a
+              href="#"
+              class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#FAFAF7] px-3 py-1.5 text-xs font-medium"
+            >
+              مشاهده جزئیات
+            </a>
+          </article>
+        </div>
+      </section>
 
-      <p class="mt-6 rounded-lg border border-[#e2ded2] bg-white p-4 text-sm leading-7">
-        تمامی اشتراک‌ها شامل: دسترسی در لحظه، CRM، پنل پیامک و کارگاه‌های آموزشی
-      </p>
-      <a href="/contact" class="mt-6 inline-flex items-center rounded-lg border border-[#4c5a2a] bg-[#4c5a2a] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#3f4b24]">مشاوره انتخاب پلن</a>
-    </section>
+      <section id="how-it-works" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">چطور کار می‌کند</p>
+        <p class="mt-5 max-w-4xl text-base leading-8 sm:text-lg sm:leading-9">
+          پرشین‌سازه فقط نمایش پروژه نیست؛ از جمع‌آوری و به‌روزرسانی اطلاعات تا شناسایی فرصت،
+          ارتباط و پیگیری، یک مسیر روشن برای فروش می‌سازد.
+        </p>
 
-    <section class="container border-t border-[#e2ded2] py-12 text-right md:py-16" id="value-summary">
-      <h2 class="text-3xl font-semibold md:text-4xl">اگر می‌خواهید زودتر به پروژه‌های مناسب برسید،<br />دموی پرشین‌سازه را ببینید</h2>
-      <p class="text-muted-foreground mt-6 max-w-3xl text-base leading-8 md:text-lg md:leading-9">در یک دموی کوتاه، می‌توانید محیط سامانه، امکانات آن و نمونه پروژه‌های مرتبط با حوزه کاری خود را ببینید.</p>
-      <div class="mt-6 flex flex-wrap justify-start gap-3">
-        <a href="/contact" class="inline-flex items-center rounded-lg border border-[#4c5a2a] bg-[#4c5a2a] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#3f4b24]">مشاهده دمو</a>
-        <a href="#solution" class="inline-flex items-center rounded-lg border border-[#4c5a2a]/35 bg-transparent px-5 py-2.5 text-sm font-medium text-[#3f4b24] transition-colors hover:bg-[#4c5a2a]/5">امکانات سامانه</a>
-      </div>
-    </section>
+        <div class="mt-8 grid gap-4 lg:grid-cols-2">
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <h3 class="text-lg font-bold">لایه جمع‌آوری و به‌روزرسانی اطلاعات</h3>
+            <p class="mt-3 text-sm leading-7">
+              اطلاعات پروژه‌های در حال ساخت به‌صورت میدانی جمع‌آوری می‌شود و به‌طور مستمر
+              به‌روزرسانی می‌ماند تا شما به یک تصویر زنده‌تر و قابل‌اعتمادتر از بازار دسترسی داشته
+              باشید.
+            </p>
+            <a
+              href="#"
+              class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-3 py-1.5 text-xs font-medium"
+            >
+              بیشتر بدانید
+            </a>
+          </article>
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <h3 class="text-lg font-bold">لایه هوش مصنوعی</h3>
+            <p class="mt-3 text-sm leading-7">
+              هوش مصنوعی پرشین‌سازه به شما کمک می‌کند پروژه‌ها را بهتر ارزیابی کنید، فرصت‌های
+              مناسب‌تر را سریع‌تر ببینید و تصمیم دقیق‌تری برای اقدام بگیرید.
+            </p>
+            <a
+              href="#"
+              class="mt-5 inline-flex rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-3 py-1.5 text-xs font-medium"
+            >
+              بیشتر بدانید
+            </a>
+          </article>
+        </div>
+      </section>
 
-    <section class="container border-t border-[#e2ded2] py-12 text-right md:py-16" id="faq">
-      <h2 class="text-3xl font-semibold md:text-4xl">سؤالات پرتکرار</h2>
-      <p class="text-muted-foreground mt-4">پاسخ کوتاه به سؤال‌هایی که بیشتر از ما می‌پرسند.</p>
-      <div class="mt-8 space-y-3">
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4" open>
-          <summary class="cursor-pointer font-medium">پرشین‌سازه دقیقاً چه اطلاعاتی از پروژه‌ها ارائه می‌دهد؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">آدرس و موقعیت پروژه، مرحله ساخت، تصاویر واقعی، اطلاعات تماس فرد مرتبط با پروژه، و مشخصات عمومی سازه مثل متراژ، تعداد طبقات و تعداد واحدها.</p>
-        </details>
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4">
-          <summary class="cursor-pointer font-medium">اطلاعات پروژه‌ها از کجا جمع‌آوری می‌شود؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">اطلاعات از طریق بازدید میدانی و حضوری جمع‌آوری می‌شود. پروژه‌ها شناسایی، ثبت و تصویربرداری می‌شوند و بعد به‌صورت دوره‌ای دوباره بررسی و به‌روزرسانی می‌شوند.</p>
-        </details>
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4">
-          <summary class="cursor-pointer font-medium">هر چند وقت اطلاعات به‌روزرسانی می‌شود؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">پروژه‌ها به‌صورت دوره‌ای بازبینی و به‌روزرسانی می‌شوند. وضعیت ساخت، تصاویر و اطلاعات تماس در هر دوره بررسی می‌شود و در صورت تغییر، اصلاح می‌گردد.</p>
-        </details>
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4">
-          <summary class="cursor-pointer font-medium">پرشین‌سازه چه مناطقی را پوشش می‌دهد؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">در حال حاضر پوشش اصلی پرشین‌سازه تهران، کرج و لواسان است.</p>
-        </details>
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4">
-          <summary class="cursor-pointer font-medium">پرشین‌سازه فقط یک لیست پروژه یا بانک شماره است؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">خیر. پرشین‌سازه فقط نمایش پروژه یا شماره تماس نیست. این سامانه در کنار داده‌های زنده پروژه، ابزارهای اجرایی مثل CRM و پیامک هوشمند و آموزش استفاده از آن‌ها را هم در اختیار شما می‌گذارد.</p>
-        </details>
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4">
-          <summary class="cursor-pointer font-medium">آیا می‌توانم قبل از خرید دمو ببینم؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">بله. با درخواست دمو، کارشناس پرشین‌سازه محیط سامانه، نحوه استفاده و امکانات آن را به شما نشان می‌دهد.</p>
-        </details>
-        <details class="rounded-lg border border-[#e2ded2] bg-white p-4">
-          <summary class="cursor-pointer font-medium">فرق طرح‌های اشتراکی چیست؟</summary>
-          <p class="text-muted-foreground mt-3 text-sm leading-7">طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.</p>
-        </details>
+      <section id="usage-steps" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="text-3xl font-bold sm:text-4xl">مراحل استفاده</h2>
+        <ol class="mt-8 grid gap-4 md:grid-cols-2">
+          <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۱</p>
+            <h3 class="mt-3 text-lg font-bold">پروژه مناسب را پیدا کنید</h3>
+            <p class="mt-3 text-sm leading-7">
+              با فیلترها، نقشه و اطلاعات به‌روز پروژه‌ها، می‌توانید فرصت‌های مرتبط با حوزه کاری خود
+              را سریع‌تر پیدا کنید.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۲</p>
+            <h3 class="mt-3 text-lg font-bold">پروژه را بررسی کنید</h3>
+            <p class="mt-3 text-sm leading-7">
+              با دیدن مرحله ساخت، تصاویر واقعی و اطلاعات پروژه، راحت‌تر تشخیص می‌دهید کدام فرصت
+              برای تماس و مذاکره مناسب‌تر است.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۳</p>
+            <h3 class="mt-3 text-lg font-bold">ارتباط را شروع کنید</h3>
+            <p class="mt-3 text-sm leading-7">
+              بعد از انتخاب پروژه مناسب، می‌توانید با اطلاعات تماس موجود و ابزارهای ارتباطی، ارتباط
+              را در زمان مناسب شروع کنید.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <p class="inline-flex rounded-full bg-[#E8E4DD] px-3 py-1 text-xs font-medium">گام ۴</p>
+            <h3 class="mt-3 text-lg font-bold">پیگیری را جلو ببرید</h3>
+            <p class="mt-3 text-sm leading-7">
+              با CRM و ابزارهای اجرایی، پیگیری‌ها ثبت می‌شود و مسیر فروش از حالت پراکنده به یک روند
+              منظم‌تر تبدیل می‌شود.
+            </p>
+          </li>
+        </ol>
+        <div class="mt-6 rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-6">
+          <p class="inline-flex rounded-full bg-[#1F1E1D] px-3 py-1 text-xs font-medium text-[#F0EBE2]">نتیجه</p>
+          <p class="mt-3 text-lg font-bold">فروش بیشتر و هدفمندتر</p>
+        </div>
+      </section>
+
+      <section id="construction-stages" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="text-3xl font-bold sm:text-4xl">مراحل ساخت قابل پوشش</h2>
+        <ul class="mt-6 flex flex-wrap gap-2.5">
+          {
+            constructionStages.map((stage) => (
+              <li class="rounded-full border border-[#E8E4DD] bg-[#FAFAF7] px-3 py-1.5 text-xs">{stage}</li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section id="who-uses" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="text-3xl font-bold sm:text-4xl">چه کسانی از پرشین‌سازه استفاده می‌کنند</h2>
+        <p class="mt-6 max-w-3xl text-base leading-8 sm:text-lg sm:leading-9">
+          اگر محصول یا خدمتی دارید که به پروژه‌های ساختمانی در حال ساخت فروخته می‌شود،
+          <br />
+          پرشین‌سازه می‌تواند برای شما کاربردی باشد.
+        </p>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <h3 class="text-lg leading-8 font-bold">وقتی سرعت رسیدن مهم‌تر است</h3>
+            <p class="mt-3 text-sm leading-7">
+              برای کالاها و خدماتی که فاصله بین نیاز، خرید و اجرا در آن‌ها کوتاه است،
+              <br />
+              مهم‌ترین مزیت این است که زودتر به پروژه آماده خرید برسید.
+            </p>
+            <div class="my-4 h-px w-full bg-[#E8E4DD]"></div>
+            <p class="text-sm font-medium">محصولاتی مثل:</p>
+            <p class="mt-2 text-sm leading-7">سیمان، آجر، گچ، میلگرد، شن و ماسه، مصالح پایه</p>
+          </article>
+          <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+            <h3 class="text-lg leading-8 font-bold">وقتی زودتر وارد مذاکره شدن مهم‌تر است</h3>
+            <p class="mt-3 text-sm leading-7">
+              برای کالاها و خدماتی که تصمیم خریدشان زمان می‌برد،
+              <br />
+              مهم‌ترین مزیت این است که زودتر وارد فضای تصمیم‌سازی پروژه شوید.
+            </p>
+            <div class="my-4 h-px w-full bg-[#E8E4DD]"></div>
+            <p class="text-sm font-medium">محصولاتی مثل:</p>
+            <p class="mt-2 text-sm leading-7">آسانسور، تأسیسات، نما، درب و پنجره، کابینت، خدمات مهندسی</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="pricing" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="text-3xl font-bold sm:text-4xl">تعرفه‌ها / اشتراک‌ها</h2>
+        <p class="mt-5 max-w-3xl text-base leading-8">
+          طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.
+        </p>
+
+        <div class="mt-8 grid gap-4 lg:grid-cols-2">
+          {pricingPlans.map((plan) => (
+            <article class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-6">
+              <h3 class="text-xl font-bold">{plan.name}</h3>
+              <ul class="mt-4 space-y-2.5 text-sm leading-7">
+                <li>{plan.audience}</li>
+                <li>{plan.coverage}</li>
+                <li><span class="font-bold">۳ ماهه:</span> {plan.price3Month}</li>
+                <li><span class="font-bold">۶ ماهه:</span> {plan.price6Month}</li>
+                <li><span class="font-bold">۱۲ ماهه:</span> {plan.price12Month}</li>
+                <li><span class="font-bold">هر مرحله‌ی اضافه:</span> {plan.extraStagePrice}</li>
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <p class="mt-6 rounded-2xl border border-[#E8E4DD] bg-[#F0EBE2] p-5 text-sm leading-7">
+          تمامی اشتراک‌ها شامل : دسترسی در لحظه، CRM، پنل پیامک و کارگاه‌های آموزشی
+        </p>
+        <a href="/contact" class="mt-6 inline-flex rounded-full bg-[#1F1E1D] px-5 py-2.5 text-sm font-medium text-[#F0EBE2]">
+          مشاوره انتخاب پلن
+        </a>
+      </section>
+
+      <section id="faq" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="text-3xl font-bold sm:text-4xl">سؤالات پرتکرار</h2>
+        <p class="mt-4 text-base leading-8">پاسخ کوتاه به سؤال‌هایی که بیشتر از ما می‌پرسند.</p>
+
+        <div class="mt-8 space-y-3">
+          {faqItems.map((item, index) => (
+            <details class="rounded-2xl border border-[#E8E4DD] bg-[#FAFAF7] p-5" open={index === 0}>
+              <summary class="cursor-pointer text-sm leading-7 font-bold">{item.question}</summary>
+              <p class="mt-3 text-sm leading-7">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section id="final-cta" class="container border-t border-[#E8E4DD] py-12 sm:py-16">
+        <h2 class="max-w-4xl text-3xl leading-tight font-bold sm:text-4xl">
+          اگر می‌خواهید زودتر به پروژه‌های مناسب برسید،
+          <br />
+          دموی پرشین‌سازه را ببینید
+        </h2>
+        <p class="mt-6 max-w-3xl text-base leading-8 sm:text-lg sm:leading-9">
+          در یک دموی کوتاه، می‌توانید محیط سامانه، امکانات آن و نمونه پروژه‌های مرتبط با حوزه کاری
+          خود را ببینید.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="/contact" class="rounded-full bg-[#D97757] px-5 py-2.5 text-sm font-medium text-white">
+            مشاهده دمو
+          </a>
+          <a href="#solution" class="rounded-full border border-[#E8E4DD] bg-[#F0EBE2] px-5 py-2.5 text-sm font-medium">
+            امکانات سامانه
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[#E8E4DD] py-10">
+      <div class="container">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="text-lg font-bold">پرشین‌سازه</p>
+            <p class="mt-2 text-sm leading-7">سیستم فروش هدفمند به پروژه‌های ساختمانی در حال ساخت</p>
+          </div>
+          <nav>
+            <ul class="flex flex-wrap justify-start gap-x-5 gap-y-2 text-sm sm:justify-end">
+              <li><a href="#how-it-works">چگونه کار می‌کند</a></li>
+              <li><a href="#pricing">تعرفه‌ها</a></li>
+              <li><a href="#faq">سؤالات پرتکرار</a></li>
+              <li><a href="/contact">تماس / درخواست دمو</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="mt-8 border-t border-[#E8E4DD] pt-5 text-xs">© {new Date().getFullYear()} پرشین‌سازه. تمامی حقوق محفوظ است.</p>
       </div>
-    </section>
+    </footer>
   </div>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
