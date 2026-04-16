@@ -1,30 +1,243 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
-import { Background } from '@/components/background';
-import { FAQ } from '@/components/blocks/faq';
-import { Features } from '@/components/blocks/features';
-import { Hero } from '@/components/blocks/hero';
-import { Logos } from '@/components/blocks/logos';
-import { Pricing } from '@/components/blocks/pricing';
-import { ResourceAllocation } from '@/components/blocks/resource-allocation';
-import { Testimonials } from '@/components/blocks/testimonials';
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
 
+const pageTitle = 'پرشین‌سازه | فروش هدفمند به پروژه‌های ساختمانی در حال ساخت';
+const pageDescription =
+  'پرشین‌سازه با داده زنده پروژه‌های در حال ساخت در تهران، کرج و لواسان، ابزارهای اجرایی فروش و آموزش، مسیر فروش تأمین‌کنندگان را هدفمندتر می‌کند.';
 
+const constructionStages = [
+  'تخریب و گودبرداری',
+  'فونداسیون',
+  'اسکلت‌بندی',
+  'دیوارچینی',
+  'گچ و خاک',
+  'ابتدای نازک‌کاری',
+  'نازک‌کاری',
+  'ظریف‌کاری',
+  'پایان کار',
+];
 
+const pricingPlans = [
+  { name: 'بنیان', coverage: 'مناسب شروع فروش هدفمند' },
+  { name: 'رویان', coverage: 'گسترش پوشش بازار و پیگیری منظم‌تر' },
+  { name: 'تابان', coverage: 'پوشش عملیاتی گسترده‌تر برای تیم فروش' },
+  { name: 'تابان پلاس', coverage: 'بالاترین سطح پوشش برای تیم‌های فعال‌تر' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'پرشین‌سازه دقیقاً چه اطلاعاتی از پروژه‌ها ارائه می‌دهد؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'آدرس و موقعیت پروژه، مرحله ساخت، تصاویر واقعی، اطلاعات تماس فرد مرتبط با پروژه، و مشخصات عمومی سازه مثل متراژ، تعداد طبقات و تعداد واحدها.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'اطلاعات پروژه‌ها از کجا جمع‌آوری می‌شود؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'اطلاعات از طریق بازدید میدانی و حضوری جمع‌آوری می‌شود. پروژه‌ها شناسایی، ثبت و تصویربرداری می‌شوند و بعد به‌صورت دوره‌ای دوباره بررسی و به‌روزرسانی می‌شوند.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'پرشین‌سازه چه مناطقی را پوشش می‌دهد؟',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'در حال حاضر پوشش اصلی پرشین‌سازه تهران، کرج و لواسان است.',
+      },
+    },
+  ],
+};
 ---
 
-<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
-  <Background className="via-muted to-muted/80">
-    <Hero />
-    <Logos client:only="react"/> 
-    <Features />
-    <ResourceAllocation />
-  </Background>
-  <Testimonials client:only='react'/>
-  <Background variant="bottom">
-    <Pricing client:only='react'/>
-    <FAQ client:only='react'/>
-  </Background>
+<DefaultLayout title={pageTitle} description={pageDescription} lang="fa" dir="rtl">
+  <div dir="rtl" class="pt-32 lg:pt-40">
+    <section class="container py-16 text-right" id="hero">
+      <p class="text-muted-foreground text-sm">پرشین‌سازه</p>
+      <h1 class="mt-4 text-4xl leading-tight font-semibold md:text-5xl">
+        پروژه‌های ساختمانی در حال ساخت<br />
+        در تهران، کرج و لواسان
+      </h1>
+      <p class="text-muted-foreground mt-6 max-w-2xl leading-8">
+        در بازار محصولات و خدمات ساختمانی، فروش موفق از رسیدن به پروژه درست در زمان درست شروع می‌شود.
+        <br />
+        پرشین‌سازه این مسیر را کوتاه‌تر می‌کند.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-start gap-3">
+        <a href="/contact" class="bg-foreground text-background rounded-lg px-5 py-2.5 text-sm font-medium">مشاهده دمو</a>
+        <a href="#solution" class="rounded-lg border px-5 py-2.5 text-sm font-medium">امکانات سامانه</a>
+      </div>
+    </section>
+
+    <section class="container py-12 text-right" id="problem">
+      <h2 class="text-3xl leading-tight font-semibold md:text-4xl">
+        فروش در بازار ساختمان،<br />
+        فقط به داشتن محصول خوب بستگی ندارد
+      </h2>
+      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">
+        پروژه‌ها پراکنده‌اند، اطلاعات بازار همیشه دقیق و به‌روز نیست،<br />
+        و اگر تماس زود یا دیر انجام شود، فرصت فروش از بین می‌رود.<br />
+        برای همین پیدا کردن پروژه مناسب، هنوز برای خیلی از تأمین‌کنندگان<br />
+        یک کار زمان‌بر، پرهزینه و فرسایشی است.
+      </p>
+    </section>
+
+    <section class="container py-12 text-right" id="solution">
+      <h2 class="text-3xl leading-tight font-semibold md:text-4xl">پرشین‌سازه پیدا کردن پروژه مناسب را ساده‌تر می‌کند</h2>
+      <p class="text-muted-foreground mt-6 max-w-4xl leading-8">
+        پرشین‌سازه با داده‌های زنده پروژه‌های در حال ساخت، ابزارهای اجرایی مثل CRM و پیامک هوشمند، و آموزش استفاده درست از این ابزارها، به شما کمک می‌کند فرصت‌های مناسب را زودتر ببینید و مسیر فروش را هدفمندتر پیش ببرید.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <article class="rounded-xl border p-5">
+          <h3 class="text-lg font-semibold">اطلاعات به‌روز پروژه‌ها</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">آدرس پروژه، مرحله ساخت، تصاویر واقعی و اطلاعات تماس، در یک مسیر مشخص جمع‌آوری و به‌روزرسانی می‌شود تا بتوانید دقیق‌تر پروژه مناسب را پیدا کنید.</p>
+          <a href="#" class="mt-4 inline-block text-sm font-medium">مشاهده جزئیات</a>
+        </article>
+        <article class="rounded-xl border p-5">
+          <h3 class="text-lg font-semibold">ابزارهای اجرایی فروش</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">با ابزارهایی مثل نقشه، فیلترها، CRM و پیامک هوشمند، پیدا کردن، پیگیری و جلو بردن فرصت‌های فروش ساده‌تر و منظم‌تر می‌شود.</p>
+          <a href="#" class="mt-4 inline-block text-sm font-medium">مشاهده جزئیات</a>
+        </article>
+        <article class="rounded-xl border p-5">
+          <h3 class="text-lg font-semibold">آموزش برای استفاده بهتر</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">تیم شما فقط به اطلاعات دسترسی ندارد؛ یاد می‌گیرد چگونه بهتر جست‌وجو کند، درست‌تر پیگیری کند و هدفمندتر جلو برود.</p>
+          <a href="#" class="mt-4 inline-block text-sm font-medium">مشاهده جزئیات</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container py-12 text-right" id="how-it-works">
+      <h2 class="text-3xl font-semibold md:text-4xl">چطور کار می‌کند</h2>
+      <p class="text-muted-foreground mt-6 max-w-4xl leading-8">پرشین‌سازه فقط نمایش پروژه نیست؛ از جمع‌آوری و به‌روزرسانی اطلاعات تا شناسایی فرصت، ارتباط و پیگیری، یک مسیر روشن برای فروش می‌سازد.</p>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <article class="rounded-xl border p-5">
+          <h3 class="font-semibold">لایه جمع‌آوری و به‌روزرسانی اطلاعات</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">اطلاعات پروژه‌های در حال ساخت به‌صورت میدانی جمع‌آوری می‌شود و به‌طور مستمر به‌روزرسانی می‌ماند تا شما به یک تصویر زنده‌تر و قابل‌اعتمادتر از بازار دسترسی داشته باشید.</p>
+          <a href="#" class="mt-3 inline-block text-sm font-medium">بیشتر بدانید</a>
+        </article>
+        <article class="rounded-xl border p-5">
+          <h3 class="font-semibold">لایه هوش مصنوعی</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">هوش مصنوعی پرشین‌سازه به شما کمک می‌کند پروژه‌ها را بهتر ارزیابی کنید، فرصت‌های مناسب‌تر را سریع‌تر ببینید و تصمیم دقیق‌تری برای اقدام بگیرید.</p>
+          <a href="#" class="mt-3 inline-block text-sm font-medium">بیشتر بدانید</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container py-12 text-right" id="usage-steps">
+      <h2 class="text-3xl font-semibold md:text-4xl">مراحل استفاده</h2>
+      <ol class="mt-8 grid gap-4 md:grid-cols-2">
+        <li class="rounded-xl border p-5"><h3 class="font-semibold">۱) پروژه مناسب را پیدا کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با فیلترها، نقشه و اطلاعات به‌روز پروژه‌ها، می‌توانید فرصت‌های مرتبط با حوزه کاری خود را سریع‌تر پیدا کنید.</p></li>
+        <li class="rounded-xl border p-5"><h3 class="font-semibold">۲) پروژه را بررسی کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با دیدن مرحله ساخت، تصاویر واقعی و اطلاعات پروژه، راحت‌تر تشخیص می‌دهید کدام فرصت برای تماس و مذاکره مناسب‌تر است.</p></li>
+        <li class="rounded-xl border p-5"><h3 class="font-semibold">۳) ارتباط را شروع کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">بعد از انتخاب پروژه مناسب، می‌توانید با اطلاعات تماس موجود و ابزارهای ارتباطی، ارتباط را در زمان مناسب شروع کنید.</p></li>
+        <li class="rounded-xl border p-5"><h3 class="font-semibold">۴) پیگیری را جلو ببرید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با CRM و ابزارهای اجرایی، پیگیری‌ها ثبت می‌شود و مسیر فروش از حالت پراکنده به یک روند منظم‌تر تبدیل می‌شود.</p></li>
+      </ol>
+      <p class="mt-6 text-lg font-semibold">نتیجه: فروش بیشتر و هدفمندتر</p>
+    </section>
+
+    <section class="container py-12 text-right" id="construction-stages">
+      <h2 class="text-3xl font-semibold md:text-4xl">مراحل ساخت قابل پوشش</h2>
+      <ul class="mt-6 flex flex-wrap gap-3">
+        {constructionStages.map((stage) => <li class="rounded-full border px-4 py-2 text-sm">{stage}</li>)}
+      </ul>
+    </section>
+
+    <section class="container py-12 text-right" id="who-uses">
+      <h2 class="text-3xl font-semibold md:text-4xl">چه کسانی از پرشین‌سازه استفاده می‌کنند</h2>
+      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">اگر محصول یا خدمتی دارید که به پروژه‌های ساختمانی در حال ساخت فروخته می‌شود،<br />پرشین‌سازه می‌تواند برای شما کاربردی باشد.</p>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <article class="rounded-xl border p-5">
+          <h3 class="font-semibold">وقتی سرعت رسیدن مهم‌تر است</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">برای کالاها و خدماتی که فاصله بین نیاز، خرید و اجرا در آن‌ها کوتاه است،<br />مهم‌ترین مزیت این است که زودتر به پروژه آماده خرید برسید.</p>
+          <p class="mt-3 text-sm font-medium">محصولاتی مثل:</p>
+          <p class="text-muted-foreground mt-1 text-sm">سیمان، آجر، گچ، میلگرد، شن و ماسه، مصالح پایه</p>
+        </article>
+        <article class="rounded-xl border p-5">
+          <h3 class="font-semibold">وقتی زودتر وارد مذاکره شدن مهم‌تر است</h3>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">برای کالاها و خدماتی که تصمیم خریدشان زمان می‌برد،<br />مهم‌ترین مزیت این است که زودتر وارد فضای تصمیم‌سازی پروژه شوید.</p>
+          <p class="mt-3 text-sm font-medium">محصولاتی مثل:</p>
+          <p class="text-muted-foreground mt-1 text-sm">آسانسور، تأسیسات، نما، درب و پنجره، کابینت، خدمات مهندسی</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container py-12 text-right" id="pricing">
+      <h2 class="text-3xl font-semibold md:text-4xl">تعرفه‌ها / اشتراک‌ها</h2>
+      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {pricingPlans.map((plan) => (
+          <article class="rounded-xl border p-5">
+            <h3 class="font-semibold">{plan.name}</h3>
+            <p class="text-muted-foreground mt-2 text-sm">{plan.coverage}</p>
+            <ul class="text-muted-foreground mt-4 space-y-1 text-xs leading-6">
+              <li>پوشش: متناسب با پلن انتخابی</li>
+              <li>مراحل قابل انتخاب: متناسب با پلن انتخابی</li>
+              <li>قیمت ۳ ماهه: در دمو ارائه می‌شود</li>
+              <li>قیمت ۶ ماهه: در دمو ارائه می‌شود</li>
+              <li>قیمت ۱۲ ماهه: در دمو ارائه می‌شود</li>
+              <li>قیمت هر مرحله اضافه: در دمو ارائه می‌شود</li>
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <p class="mt-6 rounded-lg border p-4 text-sm leading-7">
+        تمامی اشتراک‌ها شامل : دسترسی در لحظه، CRM، پنل پیامک و کارگاه‌های آموزشی
+      </p>
+      <a href="/contact" class="bg-foreground text-background mt-6 inline-block rounded-lg px-5 py-2.5 text-sm font-medium">مشاوره انتخاب پلن</a>
+    </section>
+
+    <section class="container py-12 text-right" id="value-summary">
+      <h2 class="text-3xl font-semibold md:text-4xl">اگر می‌خواهید زودتر به پروژه‌های مناسب برسید،<br />دموی پرشین‌سازه را ببینید</h2>
+      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">در یک دموی کوتاه، می‌توانید محیط سامانه، امکانات آن و نمونه پروژه‌های مرتبط با حوزه کاری خود را ببینید.</p>
+      <div class="mt-6 flex flex-wrap justify-start gap-3">
+        <a href="/contact" class="bg-foreground text-background rounded-lg px-5 py-2.5 text-sm font-medium">مشاهده دمو</a>
+        <a href="#solution" class="rounded-lg border px-5 py-2.5 text-sm font-medium">امکانات سامانه</a>
+      </div>
+    </section>
+
+    <section class="container py-12 text-right" id="faq">
+      <h2 class="text-3xl font-semibold md:text-4xl">سؤالات پرتکرار</h2>
+      <p class="text-muted-foreground mt-4">پاسخ کوتاه به سؤال‌هایی که بیشتر از ما می‌پرسند.</p>
+      <div class="mt-8 space-y-3">
+        <details class="rounded-lg border p-4" open>
+          <summary class="cursor-pointer font-medium">پرشین‌سازه دقیقاً چه اطلاعاتی از پروژه‌ها ارائه می‌دهد؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">آدرس و موقعیت پروژه، مرحله ساخت، تصاویر واقعی، اطلاعات تماس فرد مرتبط با پروژه، و مشخصات عمومی سازه مثل متراژ، تعداد طبقات و تعداد واحدها.</p>
+        </details>
+        <details class="rounded-lg border p-4">
+          <summary class="cursor-pointer font-medium">اطلاعات پروژه‌ها از کجا جمع‌آوری می‌شود؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">اطلاعات از طریق بازدید میدانی و حضوری جمع‌آوری می‌شود. پروژه‌ها شناسایی، ثبت و تصویربرداری می‌شوند و بعد به‌صورت دوره‌ای دوباره بررسی و به‌روزرسانی می‌شوند.</p>
+        </details>
+        <details class="rounded-lg border p-4">
+          <summary class="cursor-pointer font-medium">هر چند وقت اطلاعات به‌روزرسانی می‌شود؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">پروژه‌ها به‌صورت دوره‌ای بازبینی و به‌روزرسانی می‌شوند. وضعیت ساخت، تصاویر و اطلاعات تماس در هر دوره بررسی می‌شود و در صورت تغییر، اصلاح می‌گردد.</p>
+        </details>
+        <details class="rounded-lg border p-4">
+          <summary class="cursor-pointer font-medium">پرشین‌سازه چه مناطقی را پوشش می‌دهد؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">در حال حاضر پوشش اصلی پرشین‌سازه تهران، کرج و لواسان است.</p>
+        </details>
+        <details class="rounded-lg border p-4">
+          <summary class="cursor-pointer font-medium">پرشین‌سازه فقط یک لیست پروژه یا بانک شماره است؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">خیر. پرشین‌سازه فقط نمایش پروژه یا شماره تماس نیست. این سامانه در کنار داده‌های زنده پروژه، ابزارهای اجرایی مثل CRM و پیامک هوشمند و آموزش استفاده از آن‌ها را هم در اختیار شما می‌گذارد.</p>
+        </details>
+        <details class="rounded-lg border p-4">
+          <summary class="cursor-pointer font-medium">آیا می‌توانم قبل از خرید دمو ببینم؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">بله. با درخواست دمو، کارشناس پرشین‌سازه محیط سامانه، نحوه استفاده و امکانات آن را به شما نشان می‌دهد.</p>
+        </details>
+        <details class="rounded-lg border p-4">
+          <summary class="cursor-pointer font-medium">فرق طرح‌های اشتراکی چیست؟</summary>
+          <p class="text-muted-foreground mt-3 text-sm leading-7">طرح‌ها بر اساس نوع اشتراک، تعداد مراحل ساخت انتخابی و مدت اشتراک تعریف می‌شوند.</p>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </DefaultLayout>
