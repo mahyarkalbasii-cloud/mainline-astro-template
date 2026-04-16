@@ -53,7 +53,7 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-2">
           <Button size="sm" asChild>
-            <a href="/contact">درخواست دمو</a>
+            <a href="/contact">مشاهده دموی سامانه</a>
           </Button>
 
           <button
@@ -99,7 +99,7 @@ export const Navbar = () => {
             </a>
           ))}
           <Button className="mt-2" asChild>
-            <a href="/contact">تماس / درخواست دمو</a>
+            <a href="/contact">مشاهده دموی سامانه</a>
           </Button>
         </nav>
       </div>
