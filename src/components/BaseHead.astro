@@ -53,14 +53,21 @@ const imageURL = new URL(finalImage, Astro.url);
 <meta name="publisher" content={SITE_METADATA.publisher} />
 
 <!-- Theme Script -->
-<script is:inline>
-  // Get theme from localStorage or system preference
-  const savedTheme = localStorage.getItem('theme');
-  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const initialTheme = savedTheme || systemTheme;
-  
-  // Apply theme immediately to prevent flashing
-  document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+<script is:inline data-cfasync="false">
+  (() => {
+    try {
+      const savedTheme = window.localStorage.getItem('theme');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+      const initialTheme = savedTheme || systemTheme;
+
+      document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    } catch {
+      // Keep default light theme when storage or media APIs are unavailable.
+      document.documentElement.classList.remove('dark');
+    }
+  })();
 </script>
 
 <!-- Favicon -->
