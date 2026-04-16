@@ -37,6 +37,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Vazirmatn";
+  src: local("Vazirmatn");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -89,9 +97,11 @@
 
   --font-dm-sans: "DM Sans", sans-serif;
   --font-inter: "inter", sans-serif;
+  --font-vazirmatn: "Vazirmatn", "Tahoma", sans-serif;
 
   --font-sans:
-    var(--font-dm-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    var(--font-vazirmatn), var(--font-dm-sans), var(--font-inter),
+    ui-sans-serif, system-ui, sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -99,7 +109,7 @@
 
   /* StyleGlide provides a better abstraction for fonts */
   --display-family: var(--font-sans);
-  --text-family: var(--font-inter);
+  --text-family: var(--font-vazirmatn);
   --display-weight: 600;
   --text-weight: 400;
 }

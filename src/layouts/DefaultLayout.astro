@@ -8,6 +8,8 @@ const {
   description,
   lang = 'en',
   dir,
+  showNavbar = true,
+  showFooter = true,
 } = Astro.props;
 ---
 
@@ -16,8 +18,8 @@ const {
     <BaseHead title={title} description={description} />
   </head>
   <body class={`h-screen antialiased`}>
-    <Navbar client:only='react' />
+    {showNavbar && <Navbar client:only='react' />}
     <main><slot /></main>
-    <Footer />
+    {showFooter && <Footer />}
   </body>
 </html>
