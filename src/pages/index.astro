@@ -75,12 +75,15 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="container border-t py-12 text-right md:py-16" id="problem">
-      <h2 class="text-3xl leading-tight font-semibold md:text-4xl">
+    <section class="container border-t py-14 text-right md:py-20" id="problem">
+      <div class="mb-5 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
+        Problem
+      </div>
+      <h2 class="max-w-4xl text-3xl leading-tight font-semibold md:text-4xl">
         فروش در بازار ساختمان،<br />
         فقط به داشتن محصول خوب بستگی ندارد
       </h2>
-      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">
+      <p class="text-muted-foreground mt-6 max-w-3xl text-base leading-8 md:text-lg">
         پروژه‌ها پراکنده‌اند، اطلاعات بازار همیشه دقیق و به‌روز نیست،
         <br />
         و اگر تماس زود یا دیر انجام شود، فرصت فروش از بین می‌رود.
@@ -91,60 +94,76 @@ const faqSchema = {
       </p>
     </section>
 
-    <section class="container border-t py-12 text-right md:py-16" id="solution">
-      <h2 class="text-3xl leading-tight font-semibold md:text-4xl">پرشین‌سازه پیدا کردن پروژه مناسب را ساده‌تر می‌کند</h2>
-      <p class="text-muted-foreground mt-6 max-w-4xl leading-8">
+    <section class="container border-t py-14 text-right md:py-20" id="solution">
+      <div class="mb-5 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
+        Solution
+      </div>
+      <h2 class="max-w-4xl text-3xl leading-tight font-semibold md:text-4xl">پرشین‌سازه پیدا کردن پروژه مناسب را ساده‌تر می‌کند</h2>
+      <p class="text-muted-foreground mt-6 max-w-4xl text-base leading-8 md:text-lg">
         پرشین‌سازه با داده‌های زنده پروژه‌های در حال ساخت، ابزارهای اجرایی مثل CRM و پیامک
         هوشمند، و آموزش استفاده درست از این ابزارها، به شما کمک می‌کند فرصت‌های مناسب را زودتر
         ببینید و مسیر فروش را هدفمندتر پیش ببرید.
       </p>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-3 md:gap-5">
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="text-lg font-semibold">اطلاعات به‌روز پروژه‌ها</h3>
+      <div class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
+        <article class="rounded-2xl border bg-card/30 p-5 sm:p-6">
+          <span class="text-muted-foreground text-xs font-medium">ستون ۱</span>
+          <h3 class="mt-2 text-lg font-semibold">اطلاعات به‌روز پروژه‌ها</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">آدرس پروژه، مرحله ساخت، تصاویر واقعی و اطلاعات تماس، در یک مسیر مشخص جمع‌آوری و به‌روزرسانی می‌شود تا بتوانید دقیق‌تر پروژه مناسب را پیدا کنید.</p>
-          <a href="#" class="mt-4 inline-block text-sm font-medium">مشاهده جزئیات</a>
+          <a href="#" class="mt-5 inline-flex rounded-lg border px-3 py-1.5 text-sm font-medium">مشاهده جزئیات</a>
         </article>
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="text-lg font-semibold">ابزارهای اجرایی فروش</h3>
+        <article class="rounded-2xl border bg-card/30 p-5 sm:p-6">
+          <span class="text-muted-foreground text-xs font-medium">ستون ۲</span>
+          <h3 class="mt-2 text-lg font-semibold">ابزارهای اجرایی فروش</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">با ابزارهایی مثل نقشه، فیلترها، CRM و پیامک هوشمند، پیدا کردن، پیگیری و جلو بردن فرصت‌های فروش ساده‌تر و منظم‌تر می‌شود.</p>
-          <a href="#" class="mt-4 inline-block text-sm font-medium">مشاهده جزئیات</a>
+          <a href="#" class="mt-5 inline-flex rounded-lg border px-3 py-1.5 text-sm font-medium">مشاهده جزئیات</a>
         </article>
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="text-lg font-semibold">آموزش برای استفاده بهتر</h3>
+        <article class="rounded-2xl border bg-card/30 p-5 sm:col-span-2 sm:p-6 lg:col-span-1">
+          <span class="text-muted-foreground text-xs font-medium">ستون ۳</span>
+          <h3 class="mt-2 text-lg font-semibold">آموزش برای استفاده بهتر</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">تیم شما فقط به اطلاعات دسترسی ندارد؛ یاد می‌گیرد چگونه بهتر جست‌وجو کند، درست‌تر پیگیری کند و هدفمندتر جلو برود.</p>
-          <a href="#" class="mt-4 inline-block text-sm font-medium">مشاهده جزئیات</a>
+          <a href="#" class="mt-5 inline-flex rounded-lg border px-3 py-1.5 text-sm font-medium">مشاهده جزئیات</a>
         </article>
       </div>
     </section>
 
-    <section class="container border-t py-12 text-right md:py-16" id="how-it-works">
+    <section class="container border-t py-14 text-right md:py-20" id="how-it-works">
+      <div class="mb-5 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
+        System
+      </div>
       <h2 class="text-3xl font-semibold md:text-4xl">چطور کار می‌کند</h2>
-      <p class="text-muted-foreground mt-6 max-w-4xl leading-8">پرشین‌سازه فقط نمایش پروژه نیست؛ از جمع‌آوری و به‌روزرسانی اطلاعات تا شناسایی فرصت، ارتباط و پیگیری، یک مسیر روشن برای فروش می‌سازد.</p>
-      <div class="mt-8 grid gap-4 md:grid-cols-2 md:gap-5">
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="font-semibold">لایه جمع‌آوری و به‌روزرسانی اطلاعات</h3>
+      <p class="text-muted-foreground mt-6 max-w-4xl text-base leading-8 md:text-lg">پرشین‌سازه فقط نمایش پروژه نیست؛ از جمع‌آوری و به‌روزرسانی اطلاعات تا شناسایی فرصت، ارتباط و پیگیری، یک مسیر روشن برای فروش می‌سازد.</p>
+      <div class="mt-9 grid gap-4 lg:grid-cols-2 md:gap-5">
+        <article class="rounded-2xl border bg-card/30 p-5 sm:p-6">
+          <span class="text-muted-foreground text-xs font-medium">لایه ۱</span>
+          <h3 class="mt-2 font-semibold">لایه جمع‌آوری و به‌روزرسانی اطلاعات</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">اطلاعات پروژه‌های در حال ساخت به‌صورت میدانی جمع‌آوری می‌شود و به‌طور مستمر به‌روزرسانی می‌ماند تا شما به یک تصویر زنده‌تر و قابل‌اعتمادتر از بازار دسترسی داشته باشید.</p>
-          <a href="#" class="mt-3 inline-block text-sm font-medium">بیشتر بدانید</a>
+          <a href="#" class="mt-5 inline-flex rounded-lg border px-3 py-1.5 text-sm font-medium">بیشتر بدانید</a>
         </article>
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="font-semibold">لایه هوش مصنوعی</h3>
+        <article class="rounded-2xl border bg-card/30 p-5 sm:p-6">
+          <span class="text-muted-foreground text-xs font-medium">لایه ۲</span>
+          <h3 class="mt-2 font-semibold">لایه هوش مصنوعی</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">هوش مصنوعی پرشین‌سازه به شما کمک می‌کند پروژه‌ها را بهتر ارزیابی کنید، فرصت‌های مناسب‌تر را سریع‌تر ببینید و تصمیم دقیق‌تری برای اقدام بگیرید.</p>
-          <a href="#" class="mt-3 inline-block text-sm font-medium">بیشتر بدانید</a>
+          <a href="#" class="mt-5 inline-flex rounded-lg border px-3 py-1.5 text-sm font-medium">بیشتر بدانید</a>
         </article>
       </div>
     </section>
 
-    <section class="container border-t py-12 text-right md:py-16" id="usage-steps">
+    <section class="container border-t py-14 text-right md:py-20" id="usage-steps">
+      <div class="mb-5 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
+        Steps
+      </div>
       <h2 class="text-3xl font-semibold md:text-4xl">مراحل استفاده</h2>
       <ol class="mt-8 grid gap-4 md:grid-cols-2 md:gap-5">
-        <li class="rounded-xl border p-5"><h3 class="font-semibold">۱) پروژه مناسب را پیدا کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با فیلترها، نقشه و اطلاعات به‌روز پروژه‌ها، می‌توانید فرصت‌های مرتبط با حوزه کاری خود را سریع‌تر پیدا کنید.</p></li>
-        <li class="rounded-xl border p-5"><h3 class="font-semibold">۲) پروژه را بررسی کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با دیدن مرحله ساخت، تصاویر واقعی و اطلاعات پروژه، راحت‌تر تشخیص می‌دهید کدام فرصت برای تماس و مذاکره مناسب‌تر است.</p></li>
-        <li class="rounded-xl border p-5"><h3 class="font-semibold">۳) ارتباط را شروع کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">بعد از انتخاب پروژه مناسب، می‌توانید با اطلاعات تماس موجود و ابزارهای ارتباطی، ارتباط را در زمان مناسب شروع کنید.</p></li>
-        <li class="rounded-xl border p-5"><h3 class="font-semibold">۴) پیگیری را جلو ببرید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با CRM و ابزارهای اجرایی، پیگیری‌ها ثبت می‌شود و مسیر فروش از حالت پراکنده به یک روند منظم‌تر تبدیل می‌شود.</p></li>
+        <li class="rounded-xl border bg-card/20 p-5 sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۱</span><h3 class="mt-2 font-semibold">۱) پروژه مناسب را پیدا کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با فیلترها، نقشه و اطلاعات به‌روز پروژه‌ها، می‌توانید فرصت‌های مرتبط با حوزه کاری خود را سریع‌تر پیدا کنید.</p></li>
+        <li class="rounded-xl border bg-card/20 p-5 sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۲</span><h3 class="mt-2 font-semibold">۲) پروژه را بررسی کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با دیدن مرحله ساخت، تصاویر واقعی و اطلاعات پروژه، راحت‌تر تشخیص می‌دهید کدام فرصت برای تماس و مذاکره مناسب‌تر است.</p></li>
+        <li class="rounded-xl border bg-card/20 p-5 sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۳</span><h3 class="mt-2 font-semibold">۳) ارتباط را شروع کنید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">بعد از انتخاب پروژه مناسب، می‌توانید با اطلاعات تماس موجود و ابزارهای ارتباطی، ارتباط را در زمان مناسب شروع کنید.</p></li>
+        <li class="rounded-xl border bg-card/20 p-5 sm:p-6"><span class="text-muted-foreground text-xs font-medium">گام ۴</span><h3 class="mt-2 font-semibold">۴) پیگیری را جلو ببرید</h3><p class="text-muted-foreground mt-2 text-sm leading-7">با CRM و ابزارهای اجرایی، پیگیری‌ها ثبت می‌شود و مسیر فروش از حالت پراکنده به یک روند منظم‌تر تبدیل می‌شود.</p></li>
       </ol>
-      <p class="mt-6 text-lg font-semibold">نتیجه</p>
-      <p class="text-muted-foreground mt-2 text-base">فروش بیشتر و هدفمندتر</p>
+      <div class="mt-8 rounded-2xl border bg-card/20 p-5 sm:p-6">
+        <p class="text-sm font-medium">نتیجه</p>
+        <p class="text-muted-foreground mt-2 text-base">فروش بیشتر و هدفمندتر</p>
+      </div>
     </section>
 
     <section class="container border-t py-12 text-right md:py-16" id="construction-stages">
@@ -154,20 +173,27 @@ const faqSchema = {
       </ul>
     </section>
 
-    <section class="container border-t py-12 text-right md:py-16" id="who-uses">
+    <section class="container border-t py-14 text-right md:py-20" id="who-uses">
+      <div class="mb-5 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide">
+        Audience
+      </div>
       <h2 class="text-3xl font-semibold md:text-4xl">چه کسانی از پرشین‌سازه استفاده می‌کنند</h2>
-      <p class="text-muted-foreground mt-6 max-w-3xl leading-8">اگر محصول یا خدمتی دارید که به پروژه‌های ساختمانی در حال ساخت فروخته می‌شود،<br />پرشین‌سازه می‌تواند برای شما کاربردی باشد.</p>
-      <div class="mt-8 grid gap-4 md:grid-cols-2 md:gap-5">
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="mt-2 font-semibold">وقتی سرعت رسیدن مهم‌تر است</h3>
+      <p class="text-muted-foreground mt-6 max-w-3xl text-base leading-8 md:text-lg">اگر محصول یا خدمتی دارید که به پروژه‌های ساختمانی در حال ساخت فروخته می‌شود،<br />پرشین‌سازه می‌تواند برای شما کاربردی باشد.</p>
+      <div class="mt-9 grid gap-4 md:grid-cols-2 md:gap-5">
+        <article class="rounded-2xl border bg-card/30 p-5 sm:p-6">
+          <span class="text-muted-foreground text-xs font-medium">بخش ۱</span>
+          <h3 class="mt-2 text-lg font-semibold">وقتی سرعت رسیدن مهم‌تر است</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">برای کالاها و خدماتی که فاصله بین نیاز، خرید و اجرا در آن‌ها کوتاه است،<br />مهم‌ترین مزیت این است که زودتر به پروژه آماده خرید برسید.</p>
-          <p class="mt-3 text-sm font-medium">محصولاتی مثل:</p>
+          <div class="my-4 h-px w-full bg-border"></div>
+          <p class="text-sm font-medium">محصولاتی مثل:</p>
           <p class="text-muted-foreground mt-1 text-sm">سیمان، آجر، گچ، میلگرد، شن و ماسه، مصالح پایه</p>
         </article>
-        <article class="rounded-2xl border bg-card/30 p-5">
-          <h3 class="mt-2 font-semibold">وقتی زودتر وارد مذاکره شدن مهم‌تر است</h3>
+        <article class="rounded-2xl border bg-card/30 p-5 sm:p-6">
+          <span class="text-muted-foreground text-xs font-medium">بخش ۲</span>
+          <h3 class="mt-2 text-lg font-semibold">وقتی زودتر وارد مذاکره شدن مهم‌تر است</h3>
           <p class="text-muted-foreground mt-3 text-sm leading-7">برای کالاها و خدماتی که تصمیم خریدشان زمان می‌برد،<br />مهم‌ترین مزیت این است که زودتر وارد فضای تصمیم‌سازی پروژه شوید.</p>
-          <p class="mt-3 text-sm font-medium">محصولاتی مثل:</p>
+          <div class="my-4 h-px w-full bg-border"></div>
+          <p class="text-sm font-medium">محصولاتی مثل:</p>
           <p class="text-muted-foreground mt-1 text-sm">آسانسور، تأسیسات، نما، درب و پنجره، کابینت، خدمات مهندسی</p>
         </article>
       </div>
